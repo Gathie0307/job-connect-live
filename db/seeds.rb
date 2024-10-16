@@ -27,7 +27,7 @@ second_job.save!
 
 puts "Creating applications"
 
-application1 = Application.create!(status:"pending", interview_outcome: "in Progress", interview_completion:"false", interview_date: "20/10/2024", user_id: user1.id, job_id: first_job.id)
-application2 = Application.create!(status:"confirmed", interview_outcome: "complete", interview_completion:"true", interview_date: "10/10/2024", user_id: user2.id, job_id: second_job.id)
+application1 = Job_Application.create!(status:"pending", interview_outcome: "in Progress", interview_completion:"false", interview_date: "20/10/2024", user_id: user1.id, job_id: first_job.id)
+application2 = Job_Application.create!(status:"confirmed", interview_outcome: "complete", interview_completion:"true", interview_date: "10/10/2024", user_id: user2.id, job_id: second_job.id)
 
 puts "Seed created! #{User.all.count} users created & #{Job.all.count} jobs created & #{Application.all.count} applications created"
