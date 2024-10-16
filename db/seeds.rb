@@ -23,11 +23,11 @@ first_job = Job.new(job_title:"Specialist", company_name:"Cool", company_descrip
 first_job.save!
 second_job = Job.new(job_title:"Manager", company_name:"Fine", company_description:"Fine", company_size:10, location:"Edinburgh", job_description:"Fine", salary:50.00, user_id:user2.id)
 second_job.save!
-second_job = Job.new(job_title:"Web Developer", company_name:"IBM", company_description:"IBM is an amazing company to work for. They started in the 70's and they have beein involved in absolutely everything we use today!", company_size:305.300, location:"USA", job_description:"amazing", salary:150.00, user_id:user1.id)
+second_job = Job.new(job_title:"Web Developer", company_name:"IBM", company_description:"IBM is an amazing company to work for. They started in the 70's and they have beein involved in absolutely everything we use today!", company_size:305.300, location:"USA", job_description:"We are looking for a Full Stack Web Developer from Le Wagon", salary:150.00, user_id:user1.id)
 second_job.save!
-second_job = Job.new(job_title:"Frontend", company_name:"Google", company_description:"Fine", company_size:10, location:"California", job_description:"Fine", salary:90.00, user_id:user2.id)
+second_job = Job.new(job_title:"Frontend", company_name:"Google", company_description:"Google is a multinational technology company that primarily focuses on online advertising, search engine technology, cloud computing, and artificial intelligence ", company_size:179,582, location:"USA", job_description:"Front-end position available. Candidates should have proficiency in HTML, CSS, and JavaScript", salary:90.00, user_id:user2.id)
 second_job.save!
-second_job = Job.new(job_title:"Backend", company_name:"Meta", company_description:"Amazing company to work for", company_size:10, location:"Edinburgh", job_description:"Fine", salary:50.00, user_id:user1.id)
+second_job = Job.new(job_title:"Backend", company_name:"Meta", company_description:"Meta (formerly Facebook) is a technology company that specializes in social networking and online communication", company_size:70,799, location:"USA", job_description:"Fine", salary:50.00, user_id:user1.id)
 second_job.save!
 
 
