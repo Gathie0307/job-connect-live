@@ -21,9 +21,16 @@ user2 = User.create!(email: "alex@gmail.com", password: "123456")
 puts "Creating job..."
 first_job = Job.new(job_title:"Specialist", company_name:"Cool", company_description:"Cool", company_size:100, location:"Manchester", job_description:"Great", salary:100.00, user_id:user1.id)
 first_job.save!
-
 second_job = Job.new(job_title:"Manager", company_name:"Fine", company_description:"Fine", company_size:10, location:"Edinburgh", job_description:"Fine", salary:50.00, user_id:user2.id)
 second_job.save!
+second_job = Job.new(job_title:"Web Developer", company_name:"IBM", company_description:"IBM is an amazing company to work for. They started in the 70's and they have beein involved in absolutely everything we use today!", company_size:305.300, location:"USA", job_description:"amazing", salary:150.00, user_id:user1.id)
+second_job.save!
+second_job = Job.new(job_title:"Frontend", company_name:"Google", company_description:"Fine", company_size:10, location:"California", job_description:"Fine", salary:90.00, user_id:user2.id)
+second_job.save!
+second_job = Job.new(job_title:"Backend", company_name:"Meta", company_description:"Amazing company to work for", company_size:10, location:"Edinburgh", job_description:"Fine", salary:50.00, user_id:user1.id)
+second_job.save!
+
+
 
 puts "Creating applications"
 

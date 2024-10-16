@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  get 'jobs', to: 'jobs#index'
   resources :jobs do
     resources :favourites
   end
