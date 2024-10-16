@@ -1,0 +1,27 @@
+<h1>Edit Job Application</h1>
+
+<%= form_with model: @job_application do |f| %>
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.select :status, ["pending", "confirmed", "rejected"] %>
+  </div>
+
+  <div class="field">
+    <%= f.label :interview_outcome %>
+    <%= f.text_field :interview_outcome %>
+  </div>
+
+  <div class="field">
+    <%= f.label :interview_date %>
+    <%= f.date_field :interview_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :interview_completion %>
+    <%= f.check_box :interview_completion %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update Application" %>
+  </div>
+<% end %>
