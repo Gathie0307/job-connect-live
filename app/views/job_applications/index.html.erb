@@ -1,8 +1,21 @@
 <h1>Your job applications are here!</h1>
+
+<h1>Pending Applications</h1>
 <ul>
-  <% @job_applications.each do |job_application| %>
+  <% @pending_applications.each do |application| %>
     <li>
-      <%= job_application.job.job_title %> - <%= job_application.status %>
+      <%= application.job.job_title %> - <%= application.status %>
+      <%= link_to "Edit", edit_job_application_path(application) %>
+    </li>
+  <% end %>
+</ul>
+
+<h1>Confirmed Applications</h1>
+<ul>
+  <% @confirmed_applications.each do |application| %>
+    <li>
+      <%= application.job.job_title %> - <%= application.status %>
+      <%= link_to "View Details", job_application_path(application) %>
     </li>
   <% end %>
 </ul>
