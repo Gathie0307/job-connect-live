@@ -2,7 +2,7 @@
 <ul>
   <% @job_applications.each do |job_application| %>
     <li>
-      <%= job_application.job.title %> - <%= job_application.status %>
+      <%= job_application.job.job_title %> - <%= job_application.status %>
     </li>
   <% end %>
 </ul>
