@@ -1,0 +1,8 @@
+<h1>Your job applications are here!</h1>
+<ul>
+  <% @job_applications.each do |job_application| %>
+    <li>
+      <%= job_application.job.title %> - <%= job_application.status %>
+    </li>
+  <% end %>
+</ul>

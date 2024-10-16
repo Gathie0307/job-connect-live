@@ -21,3 +21,5 @@ first_job.save!
 
 second_job = Job.new(job_title:"Manager", company_name:"Fine", company_description:"Fine", company_size:10, location:"Edinburgh", job_description:"Fine", salary:50.00, user_id:user2.id)
 second_job.save!
+
+
