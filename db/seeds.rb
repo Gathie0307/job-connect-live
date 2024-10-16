@@ -9,8 +9,11 @@
 #   end
 
 puts "Cleaning db"
-
+Application.destroy_all
+Job.destroy_all
 User.destroy_all
+
+
 
 user1 = User.create!(email: "max@gmail.com", password: "123456")
 user2 = User.create!(email: "alex@gmail.com", password: "123456")
@@ -21,3 +24,10 @@ first_job.save!
 
 second_job = Job.new(job_title:"Manager", company_name:"Fine", company_description:"Fine", company_size:10, location:"Edinburgh", job_description:"Fine", salary:50.00, user_id:user2.id)
 second_job.save!
+
+puts "Creating applications"
+
+application1 = Application.create!(status:"pending", interview_outcome: "in Progress", interview_completion:"false", interview_date: "20/10/2024", user_id: user1.id, job_id: first_job.id)
+application2 = Application.create!(status:"confirmed", interview_outcome: "complete", interview_completion:"true", interview_date: "10/10/2024", user_id: user2.id, job_id: second_job.id)
+
+puts "Seed created! #{User.all.count} users created & #{Job.all.count} jobs created & #{Application.all.count} applications created"
