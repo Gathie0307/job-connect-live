@@ -15,6 +15,6 @@ Rails.application.routes.draw do
   # root "posts#index"
   resources :jobs do
     resources :favourites
-    resources :applications
+    resources :job_applications
   end
 end
