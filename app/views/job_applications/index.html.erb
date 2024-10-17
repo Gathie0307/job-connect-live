@@ -1,21 +1,26 @@
-<h1>Your job applications are here!</h1>
+<div class="title">
+  <h1>Your job applications are here!</h1>
+</div>
 
-<h1>Pending Applications</h1>
-<ul>
-  <% @pending_applications.each do |application| %>
-    <li>
-      <%= application.job.job_title %> - <%= application.status %>
-      <%= link_to "Edit", edit_job_application_path(application) %>
-    </li>
-  <% end %>
-</ul>
-
-<h1>Confirmed Applications</h1>
-<ul>
-  <% @confirmed_applications.each do |application| %>
-    <li>
-      <%= application.job.job_title %> - <%= application.status %>
-      <%= link_to "View Details", job_application_path(application) %>
-    </li>
-  <% end %>
-</ul>
+<div class="pending">
+  <h3>Pending Applications</h3>
+  <ul>
+    <% @pending_applications.each do |application| %>
+      <li>
+        <%= application.job.job_title %> - <%= application.status %>
+        <%= link_to "Edit", edit_job_application_path(application) %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<div class="confirmed">
+  <h3>Confirmed Applications</h3>
+  <ul>
+    <% @confirmed_applications.each do |application| %>
+      <li>
+        <%= application.job.job_title %> - <%= application.status %>
+        <%= link_to "View Details", job_application_path(application) %>
+      </li>
+    <% end %>
+  </ul>
+</div>
