@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get 'jobs', to: 'jobs#index'
   resources :jobs do
     resources :favourites
+    resources :job_applications, only: [:create]
+
   end
-  resources :job_applications
+  resources :job_applications, except: [:create]
 end
