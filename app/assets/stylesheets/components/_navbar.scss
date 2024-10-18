@@ -1,12 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: #1B4965;
+  background: white;
   font-weight: bold;
   color: #F6BF51;
 }
-
+.navbar-brand{
+  font-weight: 500;
+  font-size: 30px;
+  font-family: 'Inter', sans-serif;
+  color: #5FA8D3;
+  margin-right: 100px;
+}
 .navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -14,5 +23,12 @@
 }
 
 .nav-link {
-  color: #F6BF51;
+  color: #1B4965;
+  font-weight: 500;
+  font-size: 18px;
+  margin-right: 20px;
+}
+#navbarSupportedContent .nav-link-border {
+  padding-right: 20px;
+  border-right: 2px solid #1B4965
 }
