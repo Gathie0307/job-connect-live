@@ -9,20 +9,9 @@
 #   end
 
 puts "Cleaning db"
-
 JobApplication.destroy_all
-puts "Cleaning Job "
 Job.destroy_all
 User.destroy_all
-
-
-
-
-
-
-
-
-
 
 
 
@@ -34,12 +23,12 @@ first_job = Job.new(job_title:"IT Specialist", company_name:"BASF", company_desc
 first_job.save!
 second_job = Job.new(job_title:"IT Project Manager", company_name:"ARM Holdings", company_description:"ARM Holdings is a prominent IT company from the UK. It designs and licenses semiconductor IP, including the widely used ARM architecture, which is used in a vast majority of smartphones and tablets worldwide.", company_size:31.285, location:"Cambridge, England", job_description:"Arm Holdings is seeking an experienced IT Project Manager to lead and coordinate complex IT projects, ensuring successful delivery within budget and timeline while meeting project objectives and adhering to quality standards.", salary:52.378, user_id:user2.id)
 second_job.save!
-third_job = Job.new(job_title:"Full Stack Web Developer", company_name:"IBM", company_description:"IBM is a global technology company that provides hardware, software, cloud-based services, and artificial intelligence solutions.", company_size:305.312, location:"Cambridge, England", job_description:"IBM is seeking a Full Stack Web Developer to join our team. The ideal candidate will have a strong foundation in front-end and back-end development, as well as experience with cloud-based technologies and Agile methodologies.", salary:70.345, user_id:user1.id)
-third_job.save!
-fourth_job = Job.new(job_title:"Front-end", company_name:"Google", company_description:"Google is a multinational technology company that primarily focuses on online advertising, search engine technology, cloud computing, and artificial intelligence.", company_size:179.582, location:"California, USA", job_description:"Google is seeking a talented Front-end Developer to join our team. The ideal candidate will have a strong understanding of HTML, CSS, and JavaScript, as well as experience with modern front-end frameworks and libraries. You will be responsible for creating intuitive and visually appealing user interfaces that contribute to our mission of organizing the world's information and making it universally accessible.", salary:42.529, user_id:user2.id)
-fourth_job .save!
-fifth_job = Job.new(job_title:"Back-end", company_name:"Meta", company_description:"Meta (formerly Facebook) is a technology company that specializes in social networking and online communication", company_size:70.799, location:"California, USA", job_description:"Meta is seeking a talented Back-end Engineer to join our team and help build the next generation of social networking platforms. As a Back-end Engineer, you will be responsible for designing, developing, and maintaining scalable and reliable systems that power our billions of users. You will work closely with a team of talented engineers to build innovative solutions that solve complex problems at scale.", salary:55.781, user_id:user1.id)
-fifth_job.save!
+second_job = Job.new(job_title:"Full Stack Web Developer", company_name:"IBM", company_description:"IBM is a global technology company that provides hardware, software, cloud-based services, and artificial intelligence solutions.", company_size:305.312, location:"Cambridge, England", job_description:"IBM is seeking a Full Stack Web Developer to join our team. The ideal candidate will have a strong foundation in front-end and back-end development, as well as experience with cloud-based technologies and Agile methodologies.", salary:70.345, user_id:user1.id)
+second_job.save!
+second_job = Job.new(job_title:"Front-end", company_name:"Google", company_description:"Google is a multinational technology company that primarily focuses on online advertising, search engine technology, cloud computing, and artificial intelligence.", company_size:179.582, location:"California, USA", job_description:"Google is seeking a talented Front-end Developer to join our team. The ideal candidate will have a strong understanding of HTML, CSS, and JavaScript, as well as experience with modern front-end frameworks and libraries. You will be responsible for creating intuitive and visually appealing user interfaces that contribute to our mission of organizing the world's information and making it universally accessible", salary:42.529, user_id:user2.id)
+second_job.save!
+second_job = Job.new(job_title:"Back-end", company_name:"Meta", company_description:"Meta (formerly Facebook) is a technology company that specializes in social networking and online communication", company_size:70.799, location:"California, USA", job_description:"Meta is seeking a talented Back-end Engineer to join our team and help build the next generation of social networking platforms. As a Back-end Engineer, you will be responsible for designing, developing, and maintaining scalable and reliable systems that power our billions of users. You will work closely with a team of talented engineers to build innovative solutions that solve complex problems at scale.", salary:55.781, user_id:user1.id)
+second_job.save!
 
 
 
@@ -47,8 +36,8 @@ puts "Creating applications"
 
 application1 = JobApplication.create!(status:"pending", interview_outcome: "in Progress", interview_completion:"false", interview_date: "20/10/2024", user_id: user1.id, job_id: first_job.id)
 application2 = JobApplication.create!(status:"confirmed", interview_outcome: "complete", interview_completion:"true", interview_date: "10/10/2024", user_id: user1.id, job_id: second_job.id)
-application3 = JobApplication.create!(status:"pending", interview_outcome: "in Progress", interview_completion:"false", interview_date: "20/10/2024", user_id: user2.id, job_id: third_job.id)
-application4 = JobApplication.create!(status:"confirmed", interview_outcome: "complete", interview_completion:"true", interview_date: "10/10/2024", user_id: user2.id, job_id: fourth_job.id)
+application3 = JobApplication.create!(status:"pending", interview_outcome: "in Progress", interview_completion:"false", interview_date: "20/10/2024", user_id: user2.id, job_id: first_job.id)
+application4 = JobApplication.create!(status:"confirmed", interview_outcome: "complete", interview_completion:"true", interview_date: "10/10/2024", user_id: user2.id, job_id: second_job.id)
 
 
 puts "Seed created! #{User.all.count} users created & #{Job.all.count} jobs created & #{JobApplication.all.count} applications created"
