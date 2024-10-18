@@ -1,38 +1,37 @@
 <div class="container">
   <div class="row justify-content-center">
-  <div class="col-sm-8 my-3">
-    <%= form_with url: jobs_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Type a keyword"
-        %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-    <% end %>
-  </div>
+    <div class="col-sm-8 my-3">
+      <h1>Search all jobs</h1>
+        <%= form_with url: jobs_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "Type a keyword"
+            %>
+          <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+        <% end %>
+    </div>
 
 
-  <div class="cards">
-    <% if @jobs.any? %>
-      <% @jobs.each do |job| %>
-        <div class="card-product">
-            <div class="card-product-infos">
-              <h2><%= link_to job.job_title, job_path(job) %> </h2>
-              <p><%= job.company_name %></p>
-              <p><%= job.location %></p>
-              <p><%= job.company_name %></p>
-              <p><%= job.salary %></p>
-            </div>
-            <div class="card-product-infos">
-              <i class="fa-solid fa-heart fa-2x"></i>
-              <i class="fa-solid fa-xmark fa-2x"></i>
-            </div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/HP_logo_2012.svg/2048px-HP_logo_2012.svg.png" />
-        </div>
+    <div class="cards">
+      <% if @jobs.any? %>
+        <% @jobs.each do |job| %>
+          <div class="card-product">
+              <div class="card-product-infos">
+                <h2><%= link_to job.job_title, job_path(job) %> </h2>
+                <h4><%= job.company_name %></h4>
+                <h5><%= job.location %></h5>
+                <h6> £<%= job.salary %></h6>
+              </div>
+              <div class="card-product-infos">
+                <i class="fa-solid fa-heart fa-2x"></i>
+                <i class="fa-solid fa-xmark fa-2x"></i>
+              </div>
+          </div>
+        <% end %>
+      <% else %>
+        <em>Sorry, no jobs found.</em>
       <% end %>
-    <% else %>
-      <em>Sorry, no jobs found.</em>
-    <% end %>
- </div>
-
+    </div>
+  </div>
 </div>
