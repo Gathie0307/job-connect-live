@@ -1,11 +1,13 @@
 <div class="show-job">
-  <ul>
-    <li><%= @job.job_title %></li>
-    <li><%= @job.company_name %></li>
-    <li><%= @job.company_description %></li>
-    <li><%= @job.company_size %></li>
-    <li><%= @job.location %></li>
-    <li><%= @job.job_description %></li>
-    <li><%= @job.salary %></li>
-  </ul>
+  <div class="card">
+    <div class="card-body">
+      <p class="card-title">Job Title: <%= @job.job_title %></p>
+      <p class="card-text">Company Name: <%= @job.company_name %></p>
+      <p class="card-text">Company Description: <%= @job.company_description %></p>
+      <p class="card-text">Size: <%= @job.company_size %></p>
+      <p class="card-text">Location: <%= @job.location %></p>
+      <p class="card-text">Job Description: <%= @job.job_description %></p>
+      <p class="card-text">Salary: <%= @job.salary %></p>
+    </div>
+  </div>
 </div>

@@ -1,3 +1,40 @@
 .show-job {
-  
+  margin-bottom: 20px;
+  margin-top: 20px; // Add space between cards
+}
+
+.card-body {
+  border-radius: 20px;
+  border: 2px solid #1B4965;
+  overflow: hidden;
+  height: 380px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  color: #1B4965;
+}
+
+.card-body h5 {
+  margin-bottom: 10px; // Add margin between title and content
+}
+
+.card-body .row {
+  margin-bottom: 10px; // Add margin between rows
+}
+
+.card-body .row > * {
+  flex: 1; // Ensure equal column widths
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 16px;
+  font-weight: bold;
 }
