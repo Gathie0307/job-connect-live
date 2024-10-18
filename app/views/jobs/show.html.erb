@@ -1,19 +1,13 @@
 <div class="show-job">
-  <ul>
-    <h5>Job Title: </h5>
-    <li><%= @job.job_title %></li>
-    <h5>Company Name: </h5>
-    <li><%= @job.company_name %></li>
-    <h5>Company Description: </h5>
-    <li><%= @job.company_description %></li>
-    <h5>Size: </h5>
-    <li><%= @job.company_size %></li>
-    <h5>Location: </h5>
-    <li><%= @job.location %></li>
-    <h5>Job Description: </h5>
-    <li><%= @job.job_description %></li>
-    <h5>Salary: </h5>
-    <li><%= @job.salary %></li>
-  </ul>
+  <div class="card">
+    <div class="card-body">
+      <p class="card-title">Job Title: <%= @job.job_title %></p>
+      <p class="card-text">Company Name: <%= @job.company_name %></p>
+      <p class="card-text">Company Description: <%= @job.company_description %></p>
+      <p class="card-text">Size: <%= @job.company_size %></p>
+      <p class="card-text">Location: <%= @job.location %></p>
+      <p class="card-text">Job Description: <%= @job.job_description %></p>
+      <p class="card-text">Salary: <%= @job.salary %></p>
+    </div>
+  </div>
 </div>
-<%# need to find out how to display the info above in a row, instead of name on top, info at the bottom %>
