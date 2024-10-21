@@ -17,7 +17,7 @@
       <% if @jobs.any? %>
         <% @jobs.each do |job| %>
           <div class="card-product">
-           <img src=<%=job.image_url%> />
+            <%# <img src=<%=job.image_url%> /> %>
               <div class="card-product-infos">
                <h2><%= link_to job.job_title, job_path(job) %> </h2>
                 <h4><%= job.company_name %></h4>
@@ -27,11 +27,13 @@
               <div class="card-product-infos">
                <% if Favourite.where(job: job, user: current_user).empty? %>
                   <%= button_to job_favourites_path(job), class:"fav_button" do %>
-                  <i class="fa-solid fa-heart"></i>
+                  <i class="fa-regular fa-heart"></i> // make this an empty heart
                   <% end %>
                 <% else %>
-        <%= link_to "Remove from Favourites", favourite_path(Favourite.where(job: job, user: current_user).last), data: {turbo_method: :delete } %>
-      <% end %>
+                  <%= link_to favourite_path(Favourite.where(job: job, user: current_user).last), data: {turbo_method: :delete } do %>
+                   <i class="fa-solid fa-heart"></i>
+                   <% end %>
+                <% end %>
               <%= button_to "More details", job_favourites_path(job) %>
               </div>
           </div>
