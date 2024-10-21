@@ -1,29 +1,37 @@
 .cards {
   margin: 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 16px;
   position: relative;
+  width: 900px;
+}
+.card-heading {
+  text-align: center;
+  color: #1B4965;
+}
+.home-page-cards {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 30px;
 }
 
 .card-product {
-  border-radius: 20px;
-  border: 2px solid #1B4965;
+  border-radius: 10px;
+  border: 1px solid transparent;
   overflow: hidden;
-  height: 180px;
+  height: 150px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
-  justify-content: space-between;
 }
 
 .card-product img {
+  margin-top: 27px;
   height: 50%;
   width: 100px;
   object-fit: cover;
-  position: absolute;
-  right: 10px;
-  bottom: 12px;
 }
 
 .card-product h2 {
@@ -48,4 +56,19 @@
   font-size: 25px;
   color: #1B4965;
   text-decoration: none;
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }

@@ -17,8 +17,9 @@
       <% if @jobs.any? %>
         <% @jobs.each do |job| %>
           <div class="card-product">
+           <img src=<%=job.image_url%> />
               <div class="card-product-infos">
-                <h2><%= link_to job.job_title, job_path(job) %> </h2>
+               <h2><%= link_to job.job_title, job_path(job) %> </h2>
                 <h4><%= job.company_name %></h4>
                 <h5><%= job.location %></h5>
                 <h6> £<%= job.salary %></h6>

@@ -1,10 +1,30 @@
 
-<div class="row">
-  <div class="col-12 col-md-6 offset-md-3">
-    <h1>Welcome to Job Connect</h1>
-
-    <div class="slogan">
-      <h4>Find a job you love, and you will never have to work a day in your life</h4>
+    <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
+      <div class="search-form-control form-group">
+        <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+        <button name="button" type="submit" class="btn btn-flat">
+          <i class="fas fa-search"></i> Search Jobs
+        </button>
+      </div>
+    </form>
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.cfe.manchester.ac.uk/connect/Connect-section-page-banner-1400x400px3.jpg);">
+      <div class="container">
+        <h1> <strong>Job</strong> Connect <strong>Live</strong>!</h1>
+        <p>Find the best the jobs that fits you</p>
+        <%= link_to "Explore more jobs", jobs_path, class: "banner-button" %>
+      </div>
     </div>
+    <div class="home-page-cards">
+      <div class="card-heading">
+        <h1>Top Companies</h1>
+      </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.1)), url(https://1000logos.net/wp-content/uploads/2016/10/Apple-Logo.png)">
+      </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.1)), url(https://cdn2.hubspot.net/hubfs/53/image8-2.jpg)">
+      </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.1)), url(https://i.pinimg.com/736x/32/90/d6/3290d68ee2ca14559cae8afe4538d97f.jpg)">
+      </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.1)), url(https://media.licdn.com/dms/image/v2/C4E0BAQH5yNXchZgPjQ/company-logo_100_100/company-logo_100_100/0/1679498901184/isometric_hq_logo?e=1737590400&v=beta&t=SxUaigfSW2laIngmINwTp5s1sirpnTKS_DOJaSmyeH8)">
+      </div>
   </div>
-</div>
+
