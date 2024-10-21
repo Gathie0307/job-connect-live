@@ -15,6 +15,42 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <div class="radio-button-width">
+      <%= f.label :employer, class: "form-check-label" %>
+          <%= f.radio_button :employer,
+                      required: true,
+                      input_html: { autocomplete: "employer"} %>
+    </div>
+    <%= f.input :username,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "username" }%>
+    <%= f.input :company_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "company_name" }%>
+    <%= f.input :experience,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "experience" }%>
+     <%= f.input :skills,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "skills" }%>
+     <%= f.input :location,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "location" }%>
+     <%= f.input :education,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "education" }%>
+     <%= f.label :company_descrption %>
+     <%= f.text_area :company_description,
+                required: true,
+                autofocus: true,
+                class: "form-control",
+                input_html: { 'rows' => 5, 'cols' => 10 }%>
   </div>
 
   <div class="form-actions">
