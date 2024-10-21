@@ -17,7 +17,7 @@ class FavouritesController < ApplicationController
   def destroy
     @favourite = Favourite.find(params["id"])
     @favourite.destroy
-    redirect_to job_path(@favourite.job), notice: 'Job was removed from your Favourites.'
+    redirect_to jobs_path, notice: 'Job was removed from your Favourites.'
   end
 
   private

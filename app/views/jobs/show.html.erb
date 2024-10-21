@@ -15,10 +15,10 @@
         <p>This job is already in your Favourites.</p>
         <%= link_to "Remove from Favourites", favourite_path(@already_favourited), data: {turbo_method: :delete } %>
       <% else %>
-        <%= button_to "Add to Favourites", job_favourites_path(@job) %>
+        <%= button_to job_favourites_path(@job), class:"fav_button" do %>
+                  <i class="fa-solid fa-heart"></i>
       <% end %>
-
-
+      <% end %>
     </div>
   </div>
 
