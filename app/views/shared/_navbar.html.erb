@@ -1,6 +1,8 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "Job Connect", root_path, class: "navbar-brand" %>
+    <%= link_to root_path, class: "navbar-brand" do %>
+       <span><span style="color:#1B4965">Job</span> Connect </span>
+    <%end%>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
@@ -20,7 +22,8 @@
       </ul>
       <ul class="navbar-nav me-auto" style="margin-right:0px !important">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Saved Jobs</a>
+            <a class="nav-link" href="#"><span>Saved Jobs</span><i class="fa-solid fa-heart"></i></a>
+
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Gayathri</a>
