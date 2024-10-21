@@ -1,0 +1,9 @@
+<div class="title">
+  <h1>Your favourite jobs are here!</h1>
+</div>
+
+<% @favourites.each do |favourite| %>
+    <ol>
+      <li><%= favourite.id %></li>
+    </li>
+  <% end %>
