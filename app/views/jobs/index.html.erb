@@ -27,7 +27,7 @@
               <div class="card-product-infos">
                <% if Favourite.where(job: job, user: current_user).empty? %>
                   <%= button_to job_favourites_path(job), class:"fav_button" do %>
-                  <i class="fa-regular fa-heart"></i> // make this an empty heart
+                  <i class="fa-regular fa-heart"></i>
                   <% end %>
                 <% else %>
                   <%= link_to favourite_path(Favourite.where(job: job, user: current_user).last), data: {turbo_method: :delete } do %>
