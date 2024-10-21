@@ -6,31 +6,47 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
+         <% if user_signed_in? && current_user.employer == true %>
+          <li class="nav-item active">
+            <%= link_to "All Job Listings", jobs_path, class: "nav-link" %>
+          </li>
+            <% else %>
           <li class="nav-item active">
             <%= link_to "Jobs", jobs_path, class: "nav-link" %>
           </li>
-          <% if user_signed_in? %>
+         <% end %>
+          <% if user_signed_in? && current_user.employer == true %>
           <li class="nav-item">
-            <%= link_to "Applications", job_applications_path, class: "nav-link nav-link-border" %>
+            <%= link_to "Company Applications", job_applications_path, class: "nav-link nav-link-border" %>
+          </li>
+          <% elsif user_signed_in? && current_user.employer == false %>
+          <li class="nav-item">
+            <%= link_to "Your Applications", job_applications_path, class: "nav-link nav-link-border" %>
           </li>
             <% end %>
+          <% if user_signed_in? && current_user.employer %>
           <li class="nav-item">
-            <%= link_to "Recurting ? post a job", jobs_path, class: "nav-link" %>
-          </li>
-        <% end %>
+              <%= link_to "Recruiting? Post a job", jobs_path, class: "nav-link" %>
+
+            </li>
+         <% end %>
       </ul>
       <ul class="navbar-nav me-auto" style="margin-right:0px !important">
+          <% if user_signed_in? && current_user.employer == false %>
           <li class="nav-item active">
             <a class="nav-link" href="#"><span>Saved Jobs</span><i class="fa-solid fa-heart"></i></a>
-
           </li>
+        <% end %>
           <li class="nav-item">
             <a class="nav-link" href="#">Gayathri</a>
           </li>
           <li>
            <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "login", new_user_session_path, class: "nav-link" %>
+              <a class="dropdown-item" href="#">Another action</a>
+              <%= link_to "logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
             </li>
            </ul>
     </div>
