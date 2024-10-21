@@ -5,22 +5,30 @@
 <div class="pending">
   <h3>Pending Applications</h3>
   <ul>
+  <% unless @pending_applications.empty? %>
     <% @pending_applications.each do |application| %>
       <li>
         <%= application.job.job_title %> - <%= application.status %>
         <%= link_to "Edit", edit_job_application_path(application) %>
       </li>
     <% end %>
+    <% else %>
+       <p>No current pending applications</p>
+   <% end %>
   </ul>
 </div>
 <div class="confirmed">
   <h3>Confirmed Applications</h3>
   <ul>
+   <% unless @confirmed_applications.empty? %>
     <% @confirmed_applications.each do |application| %>
       <li>
         <%= application.job.job_title %> - <%= application.status %>
         <%= link_to "View Details", job_application_path(application) %>
       </li>
     <% end %>
+    <% else %>
+  <p>No current confirmed applications</p>
+  <% end %>
   </ul>
 </div>

@@ -30,7 +30,11 @@
           </div>
         <% end %>
       <% else %>
+          <% if current_user.employer %>
+        <em>No jobs listed, add one <%= link_to "here", new_job_path %>.</em>
+         <% else %>
         <em>Sorry, no jobs found.</em>
+      <% end %>
       <% end %>
     </div>
   </div>
