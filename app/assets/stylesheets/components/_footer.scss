@@ -1,13 +1,69 @@
 // _footer.scss
 
 .footer {
-  background: #1B4965;
+  border-top: 2px solid #1B4965;
+  background: white;
   font-weight: bolder;
   padding-top: 1%;
   text-align: center;
-  height: 50px;
-  color: #F6BF51;
-  position: absolute;
+  height: 100px;
+  color: #1B4965;
   bottom: 0;
   width: 100%;
+  font-family: 'Inter', sans-serif;
+}
+
+
+.icon-text {
+  margin-left: 10px;
+}
+
+.flex-container {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  margin-right: 30px;
+}
+
+.form-input {
+  margin-left: 30px;
+  width: 300px;
+  position: relative
+}
+input {
+  padding: .8rem 1rem;
+  width: 80%;
+  border-radius: 10px;
+  outline: none;
+  border: .1rem solid #1B4965;
+  font-size: .6rem;
+  position: relative;
+}
+
+::placeholder {
+  color: #d1d1d1;
+}
+
+.subscribe-btn {
+  padding: .6rem 1rem;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #1B4965, #5FA8D3);
+  color: #fff;
+  font-size: .7rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  top: 4px;
+  right: 34px;
+  position: absolute
+}
+
+.content {
+  margin-top: 15px;
+  display: flex;
+  margin-left: 106px;
+}
+
+.content p {
+  margin-left: 20px;
 }

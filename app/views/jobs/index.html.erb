@@ -17,15 +17,15 @@
       <% if @jobs.any? %>
         <% @jobs.each do |job| %>
           <div class="card-product">
+           <img src=<%=job.image_url%> />
               <div class="card-product-infos">
-                <h2><%= link_to job.job_title, job_path(job) %> </h2>
+               <h2><%= link_to job.job_title, job_path(job) %> </h2>
                 <h4><%= job.company_name %></h4>
                 <h5><%= job.location %></h5>
                 <h6> £<%= job.salary %></h6>
               </div>
               <div class="card-product-infos">
-                <i class="fa-solid fa-heart fa-2x"></i>
-                <i class="fa-solid fa-xmark fa-2x"></i>
+                <i style="color:#5FA8D3" class="fa-solid fa-heart fa-1x"></i>
               </div>
           </div>
         <% end %>
