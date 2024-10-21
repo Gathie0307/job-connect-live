@@ -15,9 +15,9 @@ Rails.application.routes.draw do
   # root "posts#index"
   get 'jobs', to: 'jobs#index'
   resources :jobs do
-    resources :favourites
+    resources :favourites, only: [:create]
     resources :job_applications, only: [:create]
-
   end
+  resources :favourites, only: [:index, :destroy]
   resources :job_applications, except: [:create]
 end

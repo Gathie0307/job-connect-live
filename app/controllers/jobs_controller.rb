@@ -12,5 +12,7 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+    @favourite = Favourite.new
+    @already_favourited = Favourite.where(job: @job, user: current_user).last
   end
 end
