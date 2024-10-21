@@ -3,7 +3,19 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
   has_many :job_applications
   has_many :jobs, through: :favourites
-  has_many :jobs
+
+  # The role attribute
+  def self.create_table
+    super do |t|
+      t.string :role, default: "user"
+      t.timestamps
+    end
+  end
+
+  def employer?
+    @role == "employer"
+  end
 end
