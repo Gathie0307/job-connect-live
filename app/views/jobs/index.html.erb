@@ -24,6 +24,14 @@
                 <h6> £<%= job.salary %></h6>
               </div>
               <div class="card-product-infos">
+               <% if Favourite.where(job: job, user: current_user).empty? %>
+                     <%= button_to "Add to Favourites", job_favourites_path(job) %>
+                          <% else %>
+        <p>This job is already in your Favourites.</p>
+        <%= link_to "Remove from Favourites", favourite_path(Favourite.where(job: job, user: current_user).last), data: {turbo_method: :delete } %>
+
+
+      <% end %>
                 <i class="fa-solid fa-heart fa-2x"></i>
                 <i class="fa-solid fa-xmark fa-2x"></i>
               <%= button_to "Favourites", job_favourites_path(job) %>

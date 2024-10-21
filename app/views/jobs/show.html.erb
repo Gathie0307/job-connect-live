@@ -9,7 +9,16 @@
       <p class="card-text">Job Description: <%= @job.job_description %></p>
       <p class="card-text">Salary: <%= @job.salary %></p>
       <%= link_to "Apply now", job_job_applications_path(@job), data: { turbo_method: :post }, class: "btn btn-primary", style: "width:200px;" %>
-      <%= button_to "Add do Favourites", job_favourites_path(@job) %>
+
+
+      <% unless Favourite.where(job: @job, user: current_user).last %>
+        <p>This job is already in your Favourites.</p>
+        <%= link_to "Remove from Favourites", favourite_path(@already_favourited), data: {turbo_method: :delete } %>
+      <% else %>
+        <%= button_to "Add to Favourites", job_favourites_path(@job) %>
+      <% end %>
+
+
     </div>
   </div>
 
