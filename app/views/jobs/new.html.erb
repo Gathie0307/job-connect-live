@@ -1,18 +1,17 @@
 <h1>New Job</h1>
-
-<%= simple_form_for(@job) do |f| %>
-<div class="form-group">
-  <%= f.input :job_title  %>
-  <%= f.input :company_name %>
-  <%= f.input :company_description %>
-  <%= f.input :company_size  %>
-  <%= f.input :location  %>
-  <%= f.input :salary %>
-  <%= f.submit "add job listing"  %>
-  <% end %>
+<div class="add_jobs">
+  <%= simple_form_for(@job) do |f| %>
+  <div class="form-group">
+    <%= f.input :job_title  %>
+    <%= f.input :company_name %>
+    <%= f.input :company_description %>
+    <%= f.input :company_size  %>
+    <%= f.input :location  %>
+    <%= f.input :salary %>
+    <%= f.input :photo, as: :file %>
+    <div class="btn_add_job">
+      <%= f.submit "add job listing"  %>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-<div class="form-group">
-  <%= f.submit "Create Job", class: "btn btn-primary" %>
-</div>
-<% end %>

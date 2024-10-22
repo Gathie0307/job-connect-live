@@ -11,13 +11,11 @@
           <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
         <% end %>
     </div>
-
-
     <div class="cards">
       <% if @jobs.any? %>
         <% @jobs.each do |job| %>
           <div class="card-product">
-            <%# <img src=<%=job.image_url%> /> %>
+            <%= cl_image_tag  job.photo.key%> 
               <div class="card-product-infos">
                <h2><%= link_to job.job_title, job_path(job) %> </h2>
                 <h4><%= job.company_name %></h4>
