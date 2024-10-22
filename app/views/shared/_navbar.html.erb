@@ -26,9 +26,8 @@
             <% end %>
           <% if user_signed_in? && current_user.employer %>
           <li class="nav-item">
-              <%= link_to "Recruting? Post a job", jobs_path, class: "nav-link" %>
-
-            </li>
+              <%= link_to "Recruiting? Post a job", new_job_path, class: "nav-link" %>
+          </li>
          <% end %>
       </ul>
       <ul class="navbar-nav me-auto" style="margin-right:0px !important">
