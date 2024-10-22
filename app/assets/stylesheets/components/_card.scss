@@ -6,6 +6,7 @@
   position: relative;
   width: 900px;
 }
+
 .card-heading {
   text-align: center;
   color: #1B4965;
@@ -73,11 +74,31 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.profile-job-application {
-  padding : 20px
+.card-job-application{
+  padding : 20px;
+  font-family: 'Inter', sans-serif;
+  color: #1B4965;
+
 }
-.profile-job-application .user-info {
-  border-radius: 10px;
+.card-job-application-right{
+  margin-left: 30px;
+  width: 60%;
+  border-radius: 5px;
+  border: 1px solid #1B4965;
+}
+.card-job-application .user-info {
+  border-radius: 5px;
   border: 1px solid #1B4965;
   width: 40%;
+}
+
+.title{
+  border-bottom: 2px solid #1B4965;
+  font-weight: 500;
+  font-size: 30px
+}
+
+#border-width{
+  border: 1px solid #5FA8D3;
+    margin: 20px
 }
