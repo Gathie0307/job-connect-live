@@ -1,34 +1,84 @@
-<div class="title">
-  <h1>Your job applications are here!</h1>
-</div>
-
-<div class="pending">
-  <h3>Pending Applications</h3>
-  <ul>
-  <% unless @pending_applications.empty? %>
-    <% @pending_applications.each do |application| %>
-      <li>
-        <%= application.job.job_title %> - <%= application.status %>
-        <%= link_to "Edit", edit_job_application_path(application) %>
-      </li>
+<% if current_user.employer? %>
+<div class= "container d-flex profile-job-application">
+  <div class="user-info">
+      <h1>About You</h1>
+      <%= current_user.username %>
+       <%= current_user.skills %>
+  </div>
+  <div class="card-job-application">
+   <div class="title">
+    <h1>Your job applications are here!</h1>
+  </div>
+  <div class="pending">
+    <h3>Jobs Applied</h3>
+    <ul>
+    <% unless @pending_applications.empty? %>
+      <% @pending_applications.each do |application| %>
+        <li>
+          <%= application.job.job_title %> - <%= application.status %>
+          <%= link_to "Edit", edit_job_application_path(application) %>
+        </li>
+      <% end %>
+      <% else %>
+        <p>No current pending applications</p>
     <% end %>
-    <% else %>
-       <p>No current pending applications</p>
-   <% end %>
-  </ul>
-</div>
-<div class="confirmed">
-  <h3>Confirmed Applications</h3>
-  <ul>
-   <% unless @confirmed_applications.empty? %>
-    <% @confirmed_applications.each do |application| %>
-      <li>
-        <%= application.job.job_title %> - <%= application.status %>
-        <%= link_to "View Details", job_application_path(application) %>
-      </li>
+    </ul>
+  </div>
+  <div class="confirmed">
+    <h3>Confirmed Applications</h3>
+    <ul>
+    <% unless @confirmed_applications.empty? %>
+      <% @confirmed_applications.each do |application| %>
+        <li>
+          <%= application.job.job_title %> - <%= application.status %>
+          <%= link_to "View Details", job_application_path(application) %>
+        </li>
+      <% end %>
+      <% else %>
+    <p>No current confirmed applications</p>
     <% end %>
-    <% else %>
-  <p>No current confirmed applications</p>
-  <% end %>
-  </ul>
+    </ul>
+  </div>
 </div>
+<% else %>
+<div class= "container d-flex card-job-application">
+  <div class="user-info">
+      <h1>About You</h1>
+      <p> <%= current_user.username %> </p>
+      <p> <%= current_user.skills %> </p>
+    </div>
+    <div class="title">
+      <h1>Your job applications are here!</h1>
+    </div>
+  <div class="pending">
+    <h3>Jobs Applied</h3>
+    <ul>
+    <% unless @pending_applications.empty? %>
+      <% @pending_applications.each do |application| %>
+        <li>
+          <%= application.job.job_title %> - <%= application.status %>
+        </li>
+      <% end %>
+      <% else %>
+        <p>No current pending applications</p>
+    <% end %>
+    </ul>
+  </div>
+  <div class="confirmed">
+    <h3>Confirmed Applications</h3>
+    <ul>
+    <% unless @confirmed_applications.empty? %>
+      <% @confirmed_applications.each do |application| %>
+        <li>
+          <%= application.job.job_title %> - <%= application.status %>
+          <%= link_to "View Details", job_application_path(application) %>
+        </li>
+      <% end %>
+      <% else %>
+    <p>No current confirmed applications</p>
+    <% end %>
+    </ul>
+  </div>
+  </div>
+</div>
+<% end %>

@@ -9,9 +9,11 @@
 #   end
 
 puts "Cleaning db"
+Favourite.destroy_all
 JobApplication.destroy_all
 Job.destroy_all
 User.destroy_all
+
 
 
 

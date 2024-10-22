@@ -68,11 +68,12 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_22_100453) do
     t.string "job_title"
     t.string "company_name"
     t.string "company_description"
-    t.integer "company_size"
+    t.string "company_size"
     t.string "location"
     t.string "job_description"
     t.decimal "salary"
     t.bigint "user_id", null: false
+    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_jobs_on_user_id"

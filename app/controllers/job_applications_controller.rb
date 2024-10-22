@@ -12,10 +12,10 @@ class JobApplicationsController < ApplicationController
     end
   end
 
-  # def new
-  #   @job = Job.find(params[:id])
-  #   @application = JobApplication.new
-  # end
+  def new
+    @job = Job.find(params[:id])
+    @application = JobApplication.new
+  end
 
   def create
     @application = JobApplication.new(status: "pending")
@@ -29,7 +29,6 @@ class JobApplicationsController < ApplicationController
     end
   end
 
-
   def show
     @job_application = JobApplication.find(params[:id])
     @job = @job_application.job
@@ -37,5 +36,18 @@ class JobApplicationsController < ApplicationController
 
   def edit
     @job_application = JobApplication.find(params[:id])
+
   end
+
+  def update
+    @job = JobApplication.find(params[:id])
+    @job.update(job_params)
+    redirect_to job_applications_path
+  end
+end
+
+private
+
+def job_params
+  params.require(:job_application).permit(:status, :interview_outcome, :interview_date, :interview_completion)
 end
