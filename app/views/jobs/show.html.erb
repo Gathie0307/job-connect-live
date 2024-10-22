@@ -1,14 +1,29 @@
 <div class="show-job">
   <div class="card">
     <div class="card-body">
-      <p class="card-title">Job Title: <%= @job.job_title %></p>
-      <p class="card-text">Company Name: <%= @job.company_name %></p>
-      <p class="card-text">Company Description: <%= @job.company_description %></p>
-      <p class="card-text">Size: <%= @job.company_size %></p>
-      <p class="card-text">Location: <%= @job.location %></p>
-      <p class="card-text">Job Description: <%= @job.job_description %></p>
-      <p class="card-text">Salary: <%= @job.salary %></p>
-      <%= link_to "Apply now", job_job_applications_path(@job), data: { turbo_method: :post }, class: "btn btn-primary", style: "width:200px;" %>
+    <div class="card-title-show">
+       <%= cl_image_tag @job.photo.key if @job.photo.attached? %>
+       <div>
+        <p class="job-title"><%= @job.job_title %></p>
+        <div>
+         <i class="fa-solid fa-location-dot"></i> <%= @job.location %>
+          <i class="fa-solid fa-clock part-time-btn"></i> Part-time
+        </div>
+       </div>
+     </div>
+      <h4>Company  name:</h4>
+      <p class="card-text"><%= @job.company_name %></p>
+      <h4>Company description: </h4>
+      <p class="card-text"><%= @job.company_description %></p>
+      <h4>Company size</h4>
+      <p class="card-text"><%= @job.company_size %></p>
+      <h4>Location: </h4>
+      <p class="card-text"><%= @job.location %></p>
+      <h4>Job Description: </h4>
+      <p class="card-text"><%= @job.job_description %></p>
+      <h4>Salary: </h4>
+      <p class="card-text"><%= @job.salary %></p>
+      <%= link_to "Apply now", job_job_applications_path(@job), data: { turbo_method: :post }, class: "btn btn-primary apply-now-button", style: "width:200px;" %>
 
 
       <% unless Favourite.where(job: @job, user: current_user).last!=  %>
@@ -19,6 +34,9 @@
                   <i class="fa-solid fa-heart"></i>
       <% end %>
       <% end %>
+    </div>
+    <div class="card-body">
+    <p>Job Description </p>
     </div>
   </div>
 
