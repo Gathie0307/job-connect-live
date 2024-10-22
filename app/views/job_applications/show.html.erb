@@ -6,3 +6,20 @@
 <p><strong>Interview Outcome:</strong> <%= @job_application.interview_outcome %></p>
 <p><strong>Interview Date:</strong> <%= @job_application.interview_date %></p>
 <p><strong>Interview Completion:</strong> <%= @job_application.interview_completion ? "Yes" : "No" %></p>
+
+
+<div class="container chat">
+  <h1>Your job application for <%= @job_application.job_title %></h1>
+
+  <div id="messages" class="messages">
+    <% @job_application.messages.each do |message| %>
+      <div id="message-<%= message.id %>">
+        <small>
+          <strong><%= message.user.username %></strong>
+          <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+        </small>
+        <p><%= message.content %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
