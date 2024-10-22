@@ -32,6 +32,7 @@ class JobApplicationsController < ApplicationController
   def show
     @job_application = JobApplication.find(params[:id])
     @job = @job_application.job
+    @message = Message.new
   end
 
   def edit
