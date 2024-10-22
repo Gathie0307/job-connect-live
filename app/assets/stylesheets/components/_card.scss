@@ -29,6 +29,7 @@
 }
 
 .card-product img {
+  margin-left: 20px;
   margin-top: 27px;
   height: 50%;
   width: 100px;
@@ -107,4 +108,13 @@
   top: 17px;
   right: 25px;
   position: absolute
+}
+
+.btn-more-details{
+  margin-top:20px;
+  border-radius: 6px;
+  background: #1B4965;
+  border: 1px solid white;
+  color: white;
+  padding: 10px;
 }
