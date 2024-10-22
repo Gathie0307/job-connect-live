@@ -3,6 +3,6 @@ class Job < ApplicationRecord
   has_many :favourites
   has_many :job_applications
 
-  # We are using Cloudinary 
-  mount_uploader :image, ImageUploader
+  # We are using Cloudinary
+  # mount_uploader :image, ImageUploader
 end
