@@ -14,13 +14,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   get 'jobs', to: 'jobs#index'
-  resources :jobs, constraints: { employer: true } do
-    # member do  # New line for new and create actions
-    #   get :new
-    #   post :create
-    # end
-    resources :favourites
+  resources :jobs do
+    resources :favourites, only: [:create]
     resources :job_applications, only: [:create]
   end
+  resources :favourites, only: [:index, :destroy]
   resources :job_applications, except: [:create]
-
+end
