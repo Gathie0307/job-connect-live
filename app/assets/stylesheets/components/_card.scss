@@ -100,5 +100,11 @@
 
 #border-width{
   border: 1px solid #5FA8D3;
-    margin: 20px
+  margin: 20px;
+  position: relative;
+}
+.card-edit{
+  top: 17px;
+  right: 25px;
+  position: absolute
 }

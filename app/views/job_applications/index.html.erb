@@ -1,9 +1,15 @@
 <% if current_user.employer? %>
+<div class="container">
 <div class= "container d-flex card-job-application">
     <div class="user-info">
       <h1>About You</h1>
-       <%= current_user.username %>
-       <%= current_user.skills %>
+       <h2>Name: <%= current_user.username %></h2>
+       <p><span>Email</span><%= current_user.email %></p>
+      <p><span>Company Name</span><%= current_user.company_name %></p>
+      <p><span>Experience:</span> <%= current_user.experience %></p>
+      <p><span>Location:</span> <%= current_user.location %></p>
+      <p><span>Description:</span> <%= current_user.company_description %></p>
+      <p><span>Skills</span> <%= current_user.skills %> </p>
     </div>
     <div class="card-job-application-right">
       <div class="title">
@@ -14,18 +20,21 @@
            <% unless @pending_applications.empty? %>
                   <% @pending_applications.each do |application| %>
                       <div class="card-product" id="border-width">
-                        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
-                              <div class="card-product-infos">
-                                  <%= application.job.job_title %> - <%= application.status %>
-                                  <%= link_to "Edit", edit_job_application_path(application) %>
+                       <%= cl_image_tag application.job.photo.key if application.job.photo.attached? %>
+                             <div class="card-product-infos">
+                                 <h3> <%= application.job.job_title %> </h3>
+                                 <p><%= application.job.company_name %></p>
+                                 <p> Status: <%= application.status %> </p>
                               </div>
+                            <%= link_to "Edit", edit_job_application_path(application) , class:"card-edit"%>
+                            <%= button_to "Join Call", class:"fav_button" %>
                       </div>
                   <%end%>
           <% else %>
                   <div style="border: 1px solid #5FA8D3; margin:20px"class="card-product">
-                  <div class="card-product-infos">
-                  <p>No current pending applications</p>
-                  </div>
+                    <div class="card-product-infos">
+                    <p>No current pending applications</p>
+                    </div>
                   </div>
           <% end %>
         </div>
@@ -35,9 +44,8 @@
               <% unless @confirmed_applications.empty? %>
                 <% @confirmed_applications.each do |application| %>
                     <div class="card-product" id="border-width">
-                      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-                          <div class="card-product-infos">
-                            <h2><%= application.job.job_title %> - <%= application.status %></h3>
+                     <%= cl_image_tag application.job.photo.key if application.job.photo.attached? %>  <div class="card-product-infos">
+                            <h2><%= application.job.job_title %> -<%= application.status %></h3>
                             <p><%= link_to "View Details", job_application_path(application) %></p>
                           </div>
                       </div>
@@ -51,46 +59,58 @@
         </div>
      </div>
       </div>
-      <% else %>
-<div class= "container d-flex profile-job-application">
-  <div class="user-info">
-      <h1>About You</h1>
-      <p> <%= current_user.username %> </p>
-      <p> <%= current_user.skills %> </p>
-    </div>
-    <div class="title">
-      <h1>Your job applications are here!</h1>
-    </div>
-  <div class="pending">
-    <h3>Jobs Applied</h3>
-    <ul>
-    <% unless @pending_applications.empty? %>
-      <% @pending_applications.each do |application| %>
-        <li>
-          <%= application.job.job_title %> - <%= application.status %>
-        </li>
-      <% end %>
-      <% else %>
-        <p>No current pending applications</p>
-    <% end %>
-    </ul>
-  </div>
-  <div class="confirmed">
-    <h3>Confirmed Applications</h3>
-    <ul>
-    <% unless @confirmed_applications.empty? %>
-      <% @confirmed_applications.each do |application| %>
-        <li>
-          <%= application.job.job_title %> - <%= application.status %>
-          <%= link_to "View Details", job_application_path(application) %>
-        </li>
-      <% end %>
-      <% else %>
-    <p>No current confirmed applications</p>
-    <% end %>
-    </ul>
-  </div>
+  <% else %>
+<div class= "container d-flex card-job-application">
+    <div class="user-info">
+        <h1>About You</h1>
+        <p> <%= current_user.username %> </p>
+        <p> <%= current_user.skills %> </p>
+     </div>
+    <div class="card-job-application-right">
+        <div class="title">
+          <h1>Your job applications are here!</h1>
+        </div>
+        <div class="pending">
+            <h3>Jobs Applied</h3>
+            <% unless @pending_applications.empty? %>
+              <% @pending_applications.each do |application| %>
+                 <div class="card-product" id="border-width">
+                     <%= cl_image_tag application.job.photo.key if application.job.photo.attached? %>
+                     <div class="card-product-infos">
+                      <%= application.job.job_title %> - <%= application.status %>
+                     </div>
+                </div>
+              <% end %>
+              <% else %>
+              <div style="border: 1px solid #5FA8D3; margin:20px"class="card-product">
+                  <div class="card-product-infos">
+                    <p>No current pending applications</p>
+                  </div>
+              </div>
+            <% end %>
+        </div>
+        <div class="confirmed">
+            <h3>Confirmed Applications</h3>
+            <ul>
+            <% unless @confirmed_applications.empty? %>
+              <% @confirmed_applications.each do |application| %>
+                <div class="card-product" id="border-width">
+                   <%= cl_image_tag application.job.photo.key if application.job.photo.attached? %>
+                     <div class="card-product-infos">
+                        <%= application.job.job_title %> - <%= application.status %>
+                        <%= link_to "View Details", job_application_path(application) %>
+                     </div>
+                </div>
+              <% end %>
+            <% else %>
+            <div style="border: 1px solid #5FA8D3; margin:20px"class="card-product">
+                  <div class="card-product-infos">
+                    <p>No current confirmed applications</p>
+                   </div>
+            </div>
+            <% end %>
+        </div>
   </div>
 </div>
+</div>
 <% end %>
-<%end%>

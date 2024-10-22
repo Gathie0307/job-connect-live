@@ -17,7 +17,7 @@ User.destroy_all
 
 
 
-user1 = User.create!(email: "max@gmail.com", password: "123456", employer: true)
+user1 = User.create!(email: "max@gmail.com", password: "123456", employer: true, username:"Max", company_name: "IBM", experience: 5, skills: "Html,Css,JavaScript,SQL,ReactJs, Jira, Git",location:"London",education:"Bachelor Of Enginnering(Computer Science)")
 user2 = User.create!(email: "alex@gmail.com", password: "123456", employer: false)
 user3 = User.create!(email: "sue@gmail.com", password: "123456")
 user4 = User.create!(email: "clair@gmail.com", password: "123456")
