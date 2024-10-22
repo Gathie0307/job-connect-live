@@ -1,43 +1,55 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://files.oaiusercontent.com/file-ntSQOY5TkIcH6MbuPj2CdALM?se=2024-10-18T11%3A56%3A11Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Deca85f6d-d195-4856-813f-997f853782ce.webp&sig=5bFzSq2JQxMaHnNGz7knHW6R9Z8RQ1s5yHKwuYrFITA%3D" %>
-    <% end %>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <%= link_to root_path, class: "navbar-brand" do %>
+       <span style="color:#5FA8D3"><span style="color:#1B4965">Job</span> Connect </span>
+    <%end%>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
+         <% if user_signed_in? && current_user.employer == true %>
           <li class="nav-item active">
-            <%= link_to "Home", root_path, class: "nav-link" %>
+            <%= link_to "All Job Listings", jobs_path, class: "nav-link" %>
           </li>
-          <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to "My Applications", job_applications_path, class: "nav-link" %>
-          </li>
-            <% end %>
-          <li class="nav-item">
+            <% else %>
+          <li class="nav-item active">
             <%= link_to "Jobs", jobs_path, class: "nav-link" %>
           </li>
-          <li class="nav-item dropdown">
-          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag("profile.gif", class: "avatar", alt: "dropdown menu") %>
-          </a>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
+         <% end %>
+          <% if user_signed_in? && current_user.employer == true %>
           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Company Applications", job_applications_path, class: "nav-link nav-link-border" %>
+          </li>
+          <% elsif user_signed_in? && current_user.employer == false %>
+          <li class="nav-item">
+            <%= link_to "Your Applications", job_applications_path, class: "nav-link nav-link-border" %>
+          </li>
+            <% end %>
+          <% if user_signed_in? && current_user.employer %>
+          <li class="nav-item">
+              <%= link_to "Recruiting? Post a job", jobs_path, class: "nav-link" %>
+
+            </li>
+         <% end %>
+      </ul>
+      <ul class="navbar-nav me-auto" style="margin-right:0px !important">
+          <% if user_signed_in? && current_user.employer == false %>
+          <li class="nav-item active">
+            <a class="nav-link" href="#"><span>Saved Jobs</span><i class="fa-solid fa-heart"></i></a>
           </li>
         <% end %>
-      </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Gayathri</a>
+          </li>
+          <li>
+           <li class="nav-item dropdown">
+            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "login", new_user_session_path, class: "nav-link" %>
+              <a class="dropdown-item" href="#">Another action</a>
+              <%= link_to "logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
+            </li>
+           </ul>
+    </div>
     </div>
   </div>
 </div>
