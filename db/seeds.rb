@@ -9,11 +9,11 @@
 #   end
 
 puts "Cleaning db"
+Message.destroy_all
+Favourite.destroy_all
 JobApplication.destroy_all
 Job.destroy_all
 User.destroy_all
-
-
 
 user1 = User.create!(email: "max@gmail.com", password: "123456", employer: true)
 user2 = User.create!(email: "alex@gmail.com", password: "123456", employer: false)
@@ -67,7 +67,7 @@ job20.save!
 
 puts "Creating applications"
 
-application1 = JobApplication.create!(status:"pending", interview_outcome: "in Progress", interview_completion:"false", interview_date: "20/10/2024", user: user1, job_id: first_job.id)
+application1 = JobApplication.create!(status:"pending", interview_outcome: "in Progress", interview_completion:"false", interview_date: "20/10/2024", user: user2, job_id: first_job.id)
 application2 = JobApplication.create!(status:"confirmed", interview_outcome: "complete", interview_completion:"true", interview_date: "10/10/2024", user: user1, job_id: second_job.id)
 application3 = JobApplication.create!(status:"pending", interview_outcome: "in Progress", interview_completion:"false", interview_date: "20/10/2024", user: user3, job_id: first_job.id)
 application4 = JobApplication.create!(status:"confirmed", interview_outcome: "complete", interview_completion:"true", interview_date: "10/10/2024", user: user4, job_id: second_job.id)
