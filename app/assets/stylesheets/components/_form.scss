@@ -18,7 +18,9 @@
     top: 0px;
     bottom: 8px;
     right: 17px;
-    border-radius: 10px
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
 }
 .search-form-control .form-control {
   width: 57%;
@@ -30,8 +32,8 @@
   border: 1px solid #1B4965
 }
 .search-form-control .form-control-job{
-  font-size: 15px;
-  left: 15px;
+  font-size: 18px;
+  left: 17px;
   width: 75%;
   border-radius: 10px;
   height: 3.5rem;

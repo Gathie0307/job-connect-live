@@ -1,6 +1,6 @@
 <div class="show-job">
-  <div class="card">
-    <div class="card-body">
+  <div class="card" style="display:flex; flex-direction:row">
+    <div class="card-body" style="width:60%">
     <div class="card-title-show">
        <%= cl_image_tag @job.photo.key if @job.photo.attached? %>
        <div>
@@ -35,8 +35,13 @@
       <% end %>
       <% end %>
     </div>
-    <div class="card-body">
-    <p>Job Description </p>
+    <div class="card-body" style="width:30%; height:400px">
+    <p class="job-title" style="border-bottom: 1px solid #EAEAEA">Job Description</p>
+      <p> Published on: 12 Nov, 2019 </p>
+      <p> Vacancy: 2 Position </p>
+      <p>Salary: 50k - 120k/y </p>
+      <p> Location: California, USA </p>
+      <p>Job Nature: Full-time
     </div>
   </div>
 

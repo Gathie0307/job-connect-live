@@ -11,9 +11,6 @@
   // height: 380px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   padding: 20px;
   color: #1B4965;
 }
@@ -50,6 +47,7 @@
 
 .card-title-show {
   display: flex;
+  border-bottom: 2px solid #EAEAEA;
 }
 
 .card-title-show img {
