@@ -2,7 +2,7 @@
 <div class="card">
 <div class= "container d-flex card-job-application">
     <div class="user-info">
-      <h1>About You</h1>
+      <h2>About You</h2>
       <div class="profile-card-user-info">
          <h6><i class="fa-solid fa-user"></i>        <%= current_user.username %></h6>
          <h6><i class="fa-solid fa-phone"></i>      <%= current_user.phone_number %></h6>
@@ -39,7 +39,7 @@
                       </div>
                   <%end%>
           <% else %>
-                  <div style="border: 1px solid #5FA8D3; margin:20px"class="card-product">
+                  <div style="border: 1px solid #5FA8D3; margin:20px; font-weight: 500; justify-content: space-evenly; font-size: 20px"class="card-product">
                     <div class="card-product-infos">
                     <p>No current pending applications</p>
                     </div>
@@ -68,9 +68,11 @@
                 <% end %>
             </div>
             <% else %>
-            <div class="card-product-infos">
-            <p>No current confirmed applications</p>
-          </div>
+             <div style="border: 1px solid #5FA8D3; margin:20px; font-weight: 500; justify-content: space-evenly; font-size: 20px;"class="card-product">
+                <div class="card-product-infos">
+                <p>No current confirmed applications</p>
+              </div>
+            </div>
           <% end %>
         </div>
      </div>
@@ -78,7 +80,7 @@
   <% else %>
 <div class= "container d-flex card-job-application">
     <div class="user-info">
-        <h1>About You</h1>
+        <h2>About You</h2>
         <div class="profile-card-user-info">
             <h6><i class="fa-solid fa-user"></i>        <%= current_user.username %></h6>
             <h6><i class="fa-solid fa-phone"></i>      <%= current_user.phone_number %></h6>
@@ -115,7 +117,7 @@
                 </div>
               <% end %>
               <% else %>
-              <div style="border: 1px solid #5FA8D3; margin:20px"class="card-product">
+              <div style="border: 1px solid #5FA8D3; margin:20px; font-weight: 500; justify-content: space-evenly; font-size: 20px;"class="card-product">
                   <div class="card-product-infos">
                     <p>No current pending applications</p>
                   </div>
@@ -146,7 +148,7 @@
                 </div>
               <% end %>
             <% else %>
-            <div style="border: 1px solid #5FA8D3; margin:20px"class="card-product">
+            <div style="border: 1px solid #5FA8D3; margin:20px; font-weight: 500; justify-content: space-evenly; font-size: 20px;"class="card-product">
                   <div class="card-product-infos">
                     <p>No current confirmed applications</p>
                    </div>
