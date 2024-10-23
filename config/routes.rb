@@ -20,4 +20,8 @@ Rails.application.routes.draw do
   end
   resources :favourites, only: [:index, :destroy]
   resources :job_applications, except: [:create]
+
+  resources :job_applications, only: :show do
+  resources :messages, only: :create
+  end
 end
