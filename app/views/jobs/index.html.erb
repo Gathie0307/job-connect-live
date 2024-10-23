@@ -2,38 +2,44 @@
   <div class="row justify-content-center">
     <div class="col-sm-8 my-3">
       <h1>Search all jobs</h1>
-        <%= form_with url: jobs_path, method: :get, class: "d-flex" do %>
+        <%= form_with url: jobs_path, method: :get, class: "simple_form search" do %>
+        <div class="search-form-control form-group">
           <%= text_field_tag :query,
                 params[:query],
-                class: "form-control",
+                class: "form-control-job",
+                id: "search_query",
                 placeholder: "Type a keyword"
             %>
-          <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+          <%= submit_tag "Search Jobs", name: "", class: "btn-job btn-flat" %>
+          </div>
         <% end %>
     </div>
     <div class="cards">
       <% if @jobs.any? %>
         <% @jobs.each do |job| %>
-          <div class="card-product">
-            <% if job.photo.attached? %>
-              <%= cl_image_tag  job.photo.key%>
-            <% end %>
+
+          <div class="card-product" id="border-width" style="justify-content: space-between">
+            <%= cl_image_tag job.photo.key if job.photo.attached? %>
+
               <div class="card-product-infos">
                <h2><%= link_to job.job_title, job_path(job) %> </h2>
                 <h4><%= job.company_name %></h4>
-                <h5><%= job.location %></h5>
-                <h6> £<%= job.salary %></h6>
+                <p><%= job.location %></p>
+                <p> £<%= job.salary %></p>
               </div>
               <div class="card-product-infos">
                <% if Favourite.where(job: job, user: current_user).empty? %>
-                  <%= button_to job_favourites_path(job), class:"fav_button" do %>
+                  <%= button_to job_favourites_path(job), class:"fav_button fav-btn" do %>
                   <i class="fa-regular fa-heart"></i>
                   <% end %>
                 <% else %>
-                  <%= link_to favourite_path(Favourite.where(job: job, user: current_user).last), data: {turbo_method: :delete } do %>
-                   <i class="fa-solid fa-heart"></i>
+                  <%= link_to favourite_path(Favourite.where(job: job, user: current_user).last), class:"fav-btn", data: {turbo_method: :delete } do %>
+                       <i class="fa-solid fa-heart"></i>
                    <% end %>
                 <% end %>
+
+              <%= button_to "More details", job_favourites_path(job) , class:"btn-more-details" %>
+
               </div>
           </div>
         <% end %>

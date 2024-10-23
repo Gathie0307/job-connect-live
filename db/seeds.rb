@@ -9,12 +9,15 @@
 #   end
 
 puts "Cleaning db"
+
 Message.destroy_all
+
 Favourite.destroy_all
 JobApplication.destroy_all
 Job.destroy_all
 User.destroy_all
 
+user1 = User.create!(email: "max@gmail.com", password: "123456", employer: true, username:"Max", company_name: "IBM", experience: 5, skills: "Html,Css,JavaScript,SQL,ReactJs, Jira, Git",location:"London",education:"Bachelor Of Enginnering(Computer Science)")
 user1 = User.create!(email: "max@gmail.com", password: "123456", employer: true)
 user2 = User.create!(email: "alex@gmail.com", password: "123456", employer: false)
 user3 = User.create!(email: "sue@gmail.com", password: "123456")

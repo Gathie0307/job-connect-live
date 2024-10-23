@@ -24,7 +24,6 @@ class JobsController < ApplicationController
     end
   end
 
-
   def show
     @job = Job.find(params[:id])
     @favourite = Favourite.new

@@ -6,6 +6,7 @@
   position: relative;
   width: 900px;
 }
+
 .card-heading {
   text-align: center;
   color: #1B4965;
@@ -28,6 +29,7 @@
 }
 
 .card-product img {
+  margin-left: 20px;
   margin-top: 27px;
   height: 50%;
   width: 100px;
@@ -71,4 +73,48 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-job-application{
+  padding : 20px;
+  font-family: 'Inter', sans-serif;
+  color: #1B4965;
+
+}
+.card-job-application-right{
+  margin-left: 30px;
+  width: 60%;
+  border-radius: 5px;
+  border: 1px solid #1B4965;
+}
+.card-job-application .user-info {
+  border-radius: 5px;
+  border: 1px solid #1B4965;
+  width: 40%;
+}
+
+.title{
+  border-bottom: 2px solid #1B4965;
+  font-weight: 500;
+  font-size: 30px
+}
+
+#border-width{
+  border: 1px solid #5FA8D3;
+  margin: 20px;
+  position: relative;
+}
+.card-edit{
+  top: 17px;
+  right: 25px;
+  position: absolute
+}
+
+.btn-more-details{
+  margin-top:20px;
+  border-radius: 6px;
+  background: #1B4965;
+  border: 1px solid white;
+  color: white;
+  padding: 10px;
 }

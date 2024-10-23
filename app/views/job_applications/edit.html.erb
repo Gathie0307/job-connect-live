@@ -1,5 +1,18 @@
 <h1>Edit Job Application</h1>
 
+  <%= @job_application.job.job_title %>
+  <%= @job_application.user.username %>
+  <%= @job_application.user.skills %>
+  <%= @job_application.user.education %>
+  <%= @job_application.status %>
+<% if @job_application.status == 'pending' %>
+
+<%= form_with model: @job_application do |f| %>
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.select :status, ["pending", "confirmed", "rejected"] %>
+  </div>
+<% end %>
 <%= form_with model: @job_application do |f| %>
   <div class="field">
     <%= f.label :status %>
@@ -24,4 +37,6 @@
   <div class="actions">
     <%= f.submit "Update Application" %>
   </div>
+<% end %>
+
 <% end %>
