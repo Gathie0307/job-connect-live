@@ -1,18 +1,16 @@
 .show-job {
-  margin-bottom: 20px;
   margin-top: 20px; // Add space between cards
 }
 
 .card-body {
-  border-radius: 20px;
-  border: 2px solid #1B4965;
+  margin: 20px;
+  width: 60%;
+  border-radius: 5px;
+  border: 1px solid #1B4965;
   overflow: hidden;
   // height: 380px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   padding: 20px;
   color: #1B4965;
 }
@@ -34,14 +32,44 @@
   font-weight: bold;
 }
 
-.card-text {
-  font-size: 16px;
-  font-weight: bold;
-}
-
-
 .fav_button {
   font-size:x-large;
   background-color: transparent;
   border: none;
+}
+.fav-btn
+{
+  background: #DCEDF7;
+  border-radius: 5px;
+  padding: 4px;
+  border: 2px solid rgb(27, 73, 101)
+}
+
+.card-title-show {
+  display: flex;
+  border-bottom: 2px solid #EAEAEA;
+}
+
+.card-title-show img {
+  width: 150px;
+}
+
+.job-title {
+  font-weight: 700;
+  font-size: 20px
+}
+
+.part-time-btn {
+  margin-left: 10px;
+}
+
+.card-text{
+  font-weight: 200;
+}
+
+.apply-now-button {
+    color: white;
+    border-radius: 5px;
+    background: #1B4965;
+    width: 200px;
 }
