@@ -24,11 +24,15 @@ Employer3 = User.create!(email: "Jack@gmail.com", password: "123456", employer: 
 Employer4 = User.create!(email: "charlie@gmail.com", password: "123456", employer: true, username:"CharlieKyle04", company_name: "BASF", experience: "5 years",first_name: "Charlie", last_name: "Kyle", skills: "Html,Css,JavaScript,SQL,ReactJs, Jira, Git",location:"London",education:"Bachelor Of Enginnering(Computer Science)")
 Employer5 = User.create!(email: "Thomas@gmail.com", password: "123456", employer: true, username:"ThomasJoe05", company_name: "ARM Holdings", experience: "5 years", skills: "Html,Css,JavaScript,SQL,ReactJs, Jira, Git",location:"London",education:"Bachelor Of Enginnering(Computer Science)")
 
-
 Employee1 = User.create!(email: "alex@gmail.com", password: "123456", employer: false, username: "Alexoliver89", first_name: "Alex", last_name: "Oliver", job_experience: "Associate Software engineer: Trio Technology(2019 - now)", phone_number: "+44 7202040921", experience: "3 years", skills: "Programming Language: ReactJs, Express JS, NodeJS, Html, CSS, JavaScript, Jira\n Cloud Platform: Amazon web Services\n Devops Tools: Docker, Kubernetes\n Database: SQL, Postgres \n Soft Skills: Teamwork, problem-solving, adaptablity\n",location:"London, England",education:"Bachelor Of Enginnering- Computer Science")
 Employee2 = User.create!(email: "sue@gmail.com", password: "123456", employer: false, username: "SueAlbie10", first_name: "Sue", last_name: "Albie", job_experience: "Consultant-IT Engineering, Llyods Banking Group Ltd(2019 - now)", phone_number: "7202040921", experience: "5 years", skills: "Programming Language: Java, Springboot, NodeJS, Html, CSS, JavaScript, Jira\n Cloud Platform: Amazon web Services\n Devops Tools: Docker, Kubernetes\n Database: SQL, Postgres \n Soft Skills: Teamwork, problem-solving, adaptablity\n",location:"Reading, England",education:"Bachelor Of Enginnering-  Information Technology")
 Employee3 = User.create!(email: "clair@gmail.com", password: "123456", employer: false, username: "Alex Oliver", first_name: "Alex", last_name: "Oliver", job_experience: "Associate Software engineer,IBM ,2019 - 2021", phone_number: "+44 7202040921")
 Employee4 = User.create!(email: "clairee@gmail.com", password: "123456", employer: false, username: "Alex Oliver", first_name: "Alex", last_name: "Oliver", job_experience: "Associate Software engineer,IBM ,2019 - 2021", phone_number: "+447202040921")
+
+user1 = User.create!(email: "max@gmail.com", password: "123456", employer: true, username:"Max", company_name: "IBM", experience: 5, skills: "Html,Css,JavaScript,SQL,ReactJs, Jira, Git",location:"London",education:"Bachelor Of Enginnering(Computer Science)")
+user2 = User.create!(email: "alex@gmail.com", password: "123456", employer: false)
+user3 = User.create!(email: "sue@gmail.com", password: "123456")
+user4 = User.create!(email: "clair@gmail.com", password: "123456")
 
 
 puts "Creating job..."
@@ -131,13 +135,6 @@ job10.save!
 # file = File.open("app/assets/images/meta.png")
 # job20.photo.attach(io: file, filename: "meta.png", content_type: "image/png")
 # job20.save!
-
-
-
-
-
-
-
 
 
 puts "Creating applications"

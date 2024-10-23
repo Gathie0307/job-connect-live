@@ -32,19 +32,29 @@
       </ul>
       <ul class="navbar-nav me-auto" style="margin-right:0px !important">
           <% if user_signed_in? && current_user.employer == false %>
-          <li class="nav-item active">
-            <a class="nav-link" href="#"><span>Saved Jobs</span><i class="fa-solid fa-heart"></i></a>
-          </li>
-        <% end %>
-          <li>
+            <li class="nav-item active">
+              <a class="nav-link" href="<%= favourites_path %>">
+                <span>Saved Jobs</span>
+                <i class="fa-solid fa-heart"></i>
+                </a>
+            </li>
+          <% end %>
+
+        <% if user_signed_in? %>
+            <li class="nav-item" style="margin-left: 15px;">
+              <p class="nav-link">Hello, <%= current_user.username %>!</p>
+            </li>
+          <% end %>
+
            <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
-             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "login", new_user_session_path, class: "nav-link" %>
               <a class="dropdown-item" href="#">Another action</a>
               <%= link_to "logout", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link" %>
-            </li>
-           </ul>
+              </li>
+             </ul>
+
     </div>
     </div>
   </div>

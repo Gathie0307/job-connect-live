@@ -24,7 +24,7 @@
 <div class="container chat">
   <h1>Your job application for <%= @job_application.job.job_title %></h1>
 
-<%= turbo_stream_from "job_application_#{@job_application.id}_messages" %>
+<%# <%= turbo_stream_from "job_application_#{@job_application.id}_messages" %>
 <div id="messages" class="messages">
   <% @job_application.messages.each do |message| %>
     <%= render "messages/message", message: message, user: current_user %>
@@ -45,4 +45,3 @@
 <% end %>
 
 </div>
-
