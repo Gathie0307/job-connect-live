@@ -37,8 +37,7 @@
   background-color: transparent;
   border: none;
 }
-.fav-btn
-{
+.fav-btn {
   background: #DCEDF7;
   border-radius: 5px;
   padding: 4px;
@@ -72,4 +71,23 @@
     border-radius: 5px;
     background: #1B4965;
     width: 200px;
+}
+
+
+.btn-chat {
+  width: 200px;
+  height: 62px;
+  background-color: #5FA8D3;
+  border-radius: 0%;
+  font-size: large;
+  font-family: 'Inter', sans-serif;
+}
+
+.btn-chat-input {
+  width: 300px;
+  height: 62px;
+  background-color: white;
+  border-radius: 10%;
+  font-size: large;
+  font-family: 'Inter', sans-serif;
 }
