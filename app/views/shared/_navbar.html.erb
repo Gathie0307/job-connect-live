@@ -32,10 +32,13 @@
       </ul>
       <ul class="navbar-nav me-auto" style="margin-right:0px !important">
           <% if user_signed_in? && current_user.employer == false %>
-          <li class="nav-item active">
-            <a class="nav-link" href="#"><span>Saved Jobs</span><i class="fa-solid fa-heart"></i></a>
-          </li>
-        <% end %>
+            <li class="nav-item active">
+              <a class="nav-link" href="<%= favourites_path %>">
+                <span>Saved Jobs</span>
+                <i class="fa-solid fa-heart"></i>
+                </a>
+            </li>
+          <% end %>
           <li>
            <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />

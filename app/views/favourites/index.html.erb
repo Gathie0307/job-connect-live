@@ -2,8 +2,14 @@
   <h1>Your favourite jobs are here!</h1>
 </div>
 
-<% @favourites.each do |favourite| %>
-    <ol>
-      <li><%= favourite.id %></li>
-    </li>
-  <% end %>
+<% if @favourites.nil? || @favourites.empty? %>
+  <p>You haven't saved any jobs yet. Start exploring and save jobs you're interested in!</p>
+<% else %>
+  <ul class="favorite-jobs">
+    <% @favourites.each do |favourite| %>
+      <li>
+        <%= link_to favourite.job.job_title, job_path(favourite.job), class: "job-title" %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
