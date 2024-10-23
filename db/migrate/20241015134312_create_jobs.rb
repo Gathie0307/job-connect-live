@@ -7,9 +7,14 @@ class CreateJobs < ActiveRecord::Migration[7.2]
       t.string :company_size
       t.string :location
       t.string :job_description
-      t.decimal :salary
+      t.string :salary
       t.references :user, null: false, foreign_key: true
       t.string :image_url
+      t.string :job_nature
+      t.integer :vacancy
+      t.string :job_responsibility
+      t.string :benefits
+      t.date :application_deadline
 
       t.timestamps
     end
