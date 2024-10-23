@@ -5,3 +5,47 @@
 .confirmed {
   margin-top: 25px;
 }
+
+.application-card {
+  display: flex;
+}
+
+.application-card .status {
+  right: 49px;
+  position: absolute;
+  top: 41px;
+  color: #1B4965;
+  font-size: 15px;
+}
+
+.application-card-title {
+  padding-left: 10px;
+  margin-top: 20px
+}
+
+.application-card-title h2 {
+  font-weight: 700;
+  font-size: 20px
+ }
+
+ .application-card-title p{
+  font-size: 17px;
+ }
+
+ .profile-card-user-info {
+   margin: 15px;
+   padding: 20px;
+   border-radius: 6px;
+   border: 1px solid #1B4965;
+   box-shadow: 5px 5px 5px #aaaaaa;
+ }
+
+ .view-application-button a{
+   font-size: 15px;
+   font-weight: 500;
+    border-radius: 5px;
+    padding: 7px;
+    background: #1B4965;
+    color: white;
+    text-decoration: none;
+}

@@ -3,14 +3,20 @@
 <div class= "container d-flex card-job-application">
     <div class="user-info">
       <h1>About You</h1>
-       <h2>Name: <%= current_user.username %></h2>
-       <p><span>Email:  </span><%= current_user.email %></p>
-      <p><span>Company Name:  </span><%= current_user.company_name %></p>
-      <p><span>Experience:  </span> <%= current_user.experience %></p>
-      <p><span>Location:  </span> <%= current_user.location %></p>
-      <p><span>Description:  </span> <%= current_user.company_description %></p>
-      <p><span>Skills:  </span> <%= current_user.skills %> </p>
-    </div>
+      <div class="profile-card-user-info">
+         <h6><i class="fa-solid fa-user"></i>        <%= current_user.username %></h6>
+         <h6><i class="fa-solid fa-phone"></i>      <%= current_user.phone_number %></h6>
+         <h6><i class="fa-solid fa-envelope"></i>    <%= current_user.email %></h6>
+       </div>
+       <div class="profile-card-user-info">
+         <h6><i class="fa-solid fa-briefcase"></i>     <%= current_user.job_experience %></h6>
+          <h6><i class="fa-solid fa-business-time"></i>  <%= current_user.experience %></h6>
+          <h6><i class="fa-solid fa-location-dot"></i>   <%= current_user.location %></h6>
+       </div>
+       <div class="profile-card-user-info">
+         <p><span>Skills:  </span> <%= current_user.skills %> </p>
+         </div>
+      </div>
     <div class="card-job-application-right">
       <div class="title">
           <h3>Job Applicatants</h3>
@@ -21,12 +27,15 @@
                   <% @pending_applications.each do |application| %>
                       <div class="card-product" id="border-width">
                        <%= cl_image_tag application.job.photo.key if application.job.photo.attached? %>
-                             <div class="card-product-infos">
-                                 <h3> <%= application.job.job_title %> </h3>
+                             <div class="card-product-infos application-card">
+                              <div class="application-card-title">
+                                 <h2> <%= application.job.job_title %> </h2>
                                  <p><%= application.job.company_name %></p>
-                                 <p> Status: <%= application.status %> </p>
                               </div>
-                            <%= link_to "View Application", edit_job_application_path(application) , class:"card-edit"%>
+                               <div class="status">
+                                    <p> <span style="font-weight: 600">Status:</span> <%= application.status %> </p>
+                                    <p class="view-application-button"><%= link_to "View Application", edit_job_application_path(application)%></p>
+                               </div> </div>
                       </div>
                   <%end%>
           <% else %>
@@ -43,10 +52,18 @@
               <% unless @confirmed_applications.empty? %>
                 <% @confirmed_applications.each do |application| %>
                     <div class="card-product" id="border-width">
-                     <%= cl_image_tag application.job.photo.key if application.job.photo.attached? %>  <div class="card-product-infos">
-                            <h2><%= application.job.job_title %> -<%= application.status %></h3>
-                            <p><%= link_to "View Application", job_application_path(application) %></p>
-                          </div>
+                     <%= cl_image_tag application.job.photo.key if application.job.photo.attached? %>
+                              <div class="card-product-infos application-card">
+                                  <div class="application-card-title">
+                                    <h2><%= application.job.job_title %></h2>
+                                    <p><%= application.job.company_name%><p>
+                                  </div>
+                                  <div class="status">
+                                    <p> <span style="font-weight: 600">Status:</span> <%= application.status %> </p>
+                                    <p class="view-application-button"><%= link_to "View Application", job_application_path(application) %></p>
+                                  </div>
+                             </div>
+
                       </div>
                 <% end %>
             </div>
@@ -62,13 +79,19 @@
 <div class= "container d-flex card-job-application">
     <div class="user-info">
         <h1>About You</h1>
-        <h4>Name: <%= current_user.username %></h4>
-        <p><span>Email:  </span><%= current_user.email %></p>
-        <p><span>Company Name:  </span><%= current_user.company_name %></p>
-        <p><span>Experience:  </span> <%= current_user.experience %></p>
-        <p><span>Location:  </span> <%= current_user.location %></p>
-        <p><span>Description:  </span> <%= current_user.company_description %></p>
-        <p><span>Skills:  </span> <%= current_user.skills %> </p>
+        <div class="profile-card-user-info">
+            <h6><i class="fa-solid fa-user"></i>        <%= current_user.username %></h6>
+            <h6><i class="fa-solid fa-phone"></i>      <%= current_user.phone_number %></h6>
+            <h6><i class="fa-solid fa-envelope"></i>    <%= current_user.email %></h6>
+            </div>
+         <div class="profile-card-user-info">
+            <h6><i class="fa-solid fa-briefcase"></i>     <%= current_user.job_experience %></h6>
+             <h6><i class="fa-solid fa-business-time"></i> <%= current_user.experience %></h6>
+              <h6><i class="fa-solid fa-location-dot"></i>   <%= current_user.location %></h6>
+            </div>
+         <div class="profile-card-user-info">
+         <p><span>Skills:  </span> <%= current_user.skills %> </p>
+         </div>
      </div>
     <div class="card-job-application-right">
         <div class="title">
@@ -80,8 +103,14 @@
               <% @pending_applications.each do |application| %>
                  <div class="card-product" id="border-width">
                      <%= cl_image_tag application.job.photo.key if application.job.photo.attached? %>
-                     <div class="card-product-infos">
-                      <%= application.job.job_title %> - <%= application.status %>
+                     <div class="card-product-infos application-card">
+                        <div class="application-card-title">
+                           <h2><%= application.job.job_title %></h2>
+                           <p><%= application.job.company_name%><p>
+                        </div>
+                        <div class="status">
+                           <p> <span style="font-weight: 600">Status:</span> <%= application.status %> </p>
+                        </div>
                      </div>
                 </div>
               <% end %>
@@ -97,11 +126,22 @@
             <h5>Confirmed:</h5>
             <% unless @confirmed_applications.empty? %>
               <% @confirmed_applications.each do |application| %>
-                <div class="card-product" id="border-width">
+                <div class="card-product" id="border-width" style="height:auto">
                    <%= cl_image_tag application.job.photo.key if application.job.photo.attached? %>
-                     <div class="card-product-infos">
-                        <%= application.job.job_title %> - <%= application.status %>
-                        <%= link_to "View Application", job_application_path(application) %>
+                     <div class="card-product-infos application-card">
+                         <div class="application-card-title">
+                                    <h2><%= application.job.job_title %></h2>
+                                    <p><%= application.job.company_name%><p>
+                                    <div>
+                                       <h6>Interview Info:</h6>
+                                        <p> Time: <%= application.interview_date%></p>
+                                        <p>Interviewer: <%= application.job.user.first_name%><p>
+                                    </div>
+                          </div>
+                           <div class="status">
+                                    <p> <span style="font-weight: 600">Status:</span> <%= application.status %> </p>
+                                    <p class="view-application-button"><%= link_to "View Application", job_application_path(application) %></p>
+                           </div>
                      </div>
                 </div>
               <% end %>
