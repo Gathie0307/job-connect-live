@@ -29,10 +29,10 @@ Employee2 = User.create!(email: "sue@gmail.com", password: "123456", employer: f
 Employee3 = User.create!(email: "clair@gmail.com", password: "123456", employer: false, username: "Alex Oliver", first_name: "Alex", last_name: "Oliver", job_experience: "Associate Software engineer,IBM ,2019 - 2021", phone_number: "+44 7202040921")
 Employee4 = User.create!(email: "clairee@gmail.com", password: "123456", employer: false, username: "Alex Oliver", first_name: "Alex", last_name: "Oliver", job_experience: "Associate Software engineer,IBM ,2019 - 2021", phone_number: "+447202040921")
 
-user1 = User.create!(email: "max@gmail.com", password: "123456", employer: true, username:"Max", company_name: "IBM", experience: 5, skills: "Html,Css,JavaScript,SQL,ReactJs, Jira, Git",location:"London",education:"Bachelor Of Enginnering(Computer Science)")
-user2 = User.create!(email: "alex@gmail.com", password: "123456", employer: false)
-user3 = User.create!(email: "sue@gmail.com", password: "123456")
-user4 = User.create!(email: "clair@gmail.com", password: "123456")
+user1 = User.create!(email: "max1@gmail.com", password: "123456", employer: true, username:"Max", company_name: "IBM", experience: 5, skills: "Html,Css,JavaScript,SQL,ReactJs, Jira, Git",location:"London",education:"Bachelor Of Enginnering(Computer Science)")
+user2 = User.create!(email: "alex1@gmail.com", password: "123456", employer: false)
+user3 = User.create!(email: "sue1@gmail.com", password: "123456")
+user4 = User.create!(email: "clair1@gmail.com", password: "123456")
 
 
 puts "Creating job..."
