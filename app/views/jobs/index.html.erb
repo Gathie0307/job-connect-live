@@ -15,27 +15,26 @@
       <% if @jobs.any? %>
         <% @jobs.each do |job| %>
           <div class="card-product">
-            <% if job.photo.present? %>
+            <% if job.photo.attached? %>
               <%= cl_image_tag  job.photo.key%>
-            <%= end %>
-            <div class="card-product-infos">
-              <h2><%= link_to job.job_title, job_path(job) %> </h2>
-              <h4><%= job.company_name %></h4>
-              <h5><%= job.location %></h5>
-              <h6> £<%= job.salary %></h6>
-            </div>
-            <div class="card-product-infos">
-              <% if Favourite.where(job: job, user: current_user).empty? %>
-                <%= button_to job_favourites_path(job), class:"fav_button" do %>
-                <i class="fa-regular fa-heart"></i>
+            <% end %>
+              <div class="card-product-infos">
+               <h2><%= link_to job.job_title, job_path(job) %> </h2>
+                <h4><%= job.company_name %></h4>
+                <h5><%= job.location %></h5>
+                <h6> £<%= job.salary %></h6>
+              </div>
+              <div class="card-product-infos">
+               <% if Favourite.where(job: job, user: current_user).empty? %>
+                  <%= button_to job_favourites_path(job), class:"fav_button" do %>
+                  <i class="fa-regular fa-heart"></i>
+                  <% end %>
+                <% else %>
+                  <%= link_to favourite_path(Favourite.where(job: job, user: current_user).last), data: {turbo_method: :delete } do %>
+                   <i class="fa-solid fa-heart"></i>
+                   <% end %>
                 <% end %>
-              <% else %>
-                <%= link_to favourite_path(Favourite.where(job: job, user: current_user).last), data: {turbo_method: :delete } do %>
-                 <i class="fa-solid fa-heart"></i>
-                 <% end %>
-               <% end %>
-            <%= button_to "More details", job_favourites_path(job) %>
-            </div>
+              </div>
           </div>
         <% end %>
       <% else %>

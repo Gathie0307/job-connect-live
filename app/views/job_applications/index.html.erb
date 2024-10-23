@@ -8,7 +8,7 @@
   <% unless @pending_applications.empty? %>
     <% @pending_applications.each do |application| %>
       <li>
-        <%= application.job.job_title %> - <%= application.status %>
+        <%= link_to application.job_title, job_application_path(application) %>
         <%= link_to "Edit", edit_job_application_path(application) %>
       </li>
     <% end %>
@@ -23,7 +23,7 @@
    <% unless @confirmed_applications.empty? %>
     <% @confirmed_applications.each do |application| %>
       <li>
-        <%= application.job.job_title %> - <%= application.status %>
+        <%= application.job_title %>
         <%= link_to "View Details", job_application_path(application) %>
       </li>
     <% end %>
