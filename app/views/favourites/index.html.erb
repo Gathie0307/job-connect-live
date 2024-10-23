@@ -8,8 +8,7 @@
   <ul class="favorite-jobs">
     <% @favourites.each do |favourite| %>
       <li>
-        <%= link_to favourite.job.title, job_path(favourite.job), class: "job-title" %>
-        <%# Optional: Display additional job details %>
+        <%= link_to favourite.job.job_title, job_path(favourite.job), class: "job-title" %>
       </li>
     <% end %>
   </ul>
