@@ -33,7 +33,7 @@
 }
 .search-form-control .form-control-job{
   font-size: 18px;
-  left: 17px;
+  right: 40px;
   width: 75%;
   border-radius: 10px;
   height: 3.5rem;
@@ -71,3 +71,31 @@
 
 // FAVOURITES INDEX CARD STYLING
 
+
+.card-product-infos {
+  font-size: 25px;
+  color: #1B4965;
+}
+
+
+
+// FORMS CHANGING VALIDATION COLOURS
+
+.form-select.is-valid {
+  border-color: $valid;
+}
+
+.form-check-input.is-valid {
+  border-color: $valid;
+}
+
+.form-check-input.is-valid ~ .form-check-label {
+  color: $valid;
+  padding-left: 10px;
+  padding-top: 2px;
+}
+
+
+.form-check-input.is-valid:checked {
+  background-color: $valid;
+}
