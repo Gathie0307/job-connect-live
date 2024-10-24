@@ -18,7 +18,7 @@
         <%= f.label :inteview_completion %>
         <%= f.input :interview_completion, label: "check if applicant completed interview" %>
       <% end %>
-      <% if @job_application.interview_date < Date.today %>
+      <% if @job_application.interview_date.present? && @job_application.interview_date < Date.today %>
       <div>
         <%= f.label :interview_outcome, style: "display:block;" %>
         <%= f.text_area :interview_outcome, placeholder: "place offer or rejection letter here...", style: "width:100%; border-color: #1B4965"%>
