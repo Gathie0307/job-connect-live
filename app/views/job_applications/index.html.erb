@@ -46,8 +46,10 @@
                      <%= cl_image_tag application.job.photo.key if application.job.photo.attached? %>  <div class="card-product-infos">
                             <h2><%= application.job.job_title %> -<%= application.status %></h3>
                             <p><%= link_to "View Details", job_application_path(application) %></p>
+                            <%= link_to "view details", job_application_path(application) %>
                           </div>
                       </div>
+
                 <% end %>
             </div>
             <% else %>
@@ -77,6 +79,7 @@
                      <%= cl_image_tag application.job.photo.key if application.job.photo.attached? %>
                      <div class="card-product-infos">
                       <%= application.job.job_title %> - <%= application.status %>
+                      <%= link_to "view details", job_application_path(application) %>
                      </div>
                 </div>
               <% end %>
