@@ -1,19 +1,21 @@
-<div class="page-title">
-<h3>Expand Your Team with a New Job Opening</h3>
-</div>
-<div class="add_jobs">
-  <%= simple_form_for(@job) do |f| %>
-  <div class="form-group">
-    <%= f.input :job_title  %>
-    <%= f.input :company_name %>
-    <%= f.input :company_description %>
-    <%= f.input :company_size  %>
-    <%= f.input :location  %>
-    <%= f.input :salary %>
-    <%= f.input :photo, as: :file %>
-    <%# <div class=> %>
-      <%= f.submit "Add New Job", class: "btn-add-job"  %>
-      <% end %>
-    <%# </div> %>
+<div class="container" style="margin-bottom:100px;">
+  <div class="page-title">
+  <h3>Expand Your Team with a New Job Opening</h3>
+  </div>
+  <div class="add_jobs">
+    <%= simple_form_for(@job) do |f| %>
+    <div class="form-group">
+      <%= f.input :job_title  %>
+      <%= f.input :company_name %>
+      <%= f.input :company_description %>
+      <%= f.input :company_size  %>
+      <%= f.input :location  %>
+      <%= f.input :salary %>
+      <%= f.input :photo, as: :file %>
+      <%# <div class=> %>
+        <%= f.submit "Add New Job", class: "btn-add-job"  %>
+        <% end %>
+      <%# </div> %>
+    </div>
   </div>
 </div>
