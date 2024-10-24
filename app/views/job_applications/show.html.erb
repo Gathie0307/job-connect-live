@@ -1,9 +1,12 @@
+<div class="main">
+
 <% if current_user.employer? %>
   <%= @job.job_title %>
   <%= @job_application.user.username %>
   <%= @job_application.user.skills %>
   <%= @job_application.user.education %>
   <%= @job_application.status %>
+
 
 <p><strong>Interview Completion:</strong> <%= @job_application.interview_completion ? "Yes" : "No" %></p>
 <% else %>
@@ -12,17 +15,21 @@
   <p><strong>Job Title:</strong> <%= @job.job_title %></p>
   <p><strong>Company:</strong> <%= @job.company_name %></p>
   <p><strong>Status:</strong> <%= @job_application.status %></p>
-  <p><strong>Interview contact:</strong><%= @job.user.username %></p>
+  <p><strong>Interview Contact:</strong> <%=   %></p>
+  <p><strong>Applicant's Skills:</strong> <%=  %></p>
+  <p><strong>Applicant's Education:</strong> <%= %></p>
+
+
   <% unless @job_application.status == 'confirmed' %>
     <p><strong>Interview Date:</strong> <%= @job_application.interview_date %></p>
     <p><strong>Interview Outcome:</strong> <%= @job_application.interview_outcome %></p>
    <% end %>
 <% end %>
 
+</div>
 
-
-<div class="container chat">
-  <h1>Your job application for <%= @job_application.job.job_title %></h1>
+<div class="main">
+  <h1>Job Application Chat</h1>
 
 <%# <%= turbo_stream_from "job_application_#{@job_application.id}_messages" %>
 <div id="messages" class="messages">
@@ -39,9 +46,9 @@
   <%= f.input :content,
     label: false,
     placeholder: "Message #{other_user.username}",
-    wrapper_html: {class: "flex-grow-1"}
+    wrapper_html: {class: "btn-chat-input"}
   %>
-  <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+  <%= f.submit "Send", class: "btn-chat" %>
 <% end %>
 
 </div>
