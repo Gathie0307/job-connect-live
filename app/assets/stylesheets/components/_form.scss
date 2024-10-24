@@ -69,25 +69,5 @@
   margin-bottom: 15px;
 }
 
+// FAVOURITES INDEX CARD STYLING
 
-
-// FORMS CHANGING VALIDATION COLOURS
-
-.form-select.is-valid {
-  border-color: $valid;
-}
-
-.form-check-input.is-valid {
-  border-color: $valid;
-}
-
-.form-check-input.is-valid ~ .form-check-label {
-  color: $valid;
-  padding-left: 10px;
-  padding-top: 2px;
-}
-
-
-.form-check-input.is-valid:checked {
-  background-color: $valid;
-}

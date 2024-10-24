@@ -18,38 +18,44 @@
       <% if @jobs.any? %>
         <% @jobs.each do |job| %>
 
-          <div class="card-product" id="border-width" style="justify-content: space-between">
-            <%= cl_image_tag job.photo.key if job.photo.attached? %>
-
+          <div class="card-product clickable-card" id="border-width" style="justify-content: space-between">
+            <div class="d-flex gap-2">
+              <%= cl_image_tag job.photo.key if job.photo.attached? %>
               <div class="card-product-infos">
-               <h2><%= link_to job.job_title, job_path(job) %> </h2>
+                <h2><%= link_to job.job_title, job_path(job) %> </h2>
                 <h4><%= job.company_name %></h4>
                 <p><%= job.location %></p>
-                <p> £<%= job.salary %></p>
+                <span><%= job.salary %></span>
               </div>
-              <div class="card-product-infos">
-               <% if Favourite.where(job: job, user: current_user).empty? %>
-                  <%= button_to job_favourites_path(job), class:"fav_button fav-btn" do %>
-                  <i class="fa-regular fa-heart"></i>
-                  <% end %>
-                <% else %>
-                  <%= link_to favourite_path(Favourite.where(job: job, user: current_user).last), class:"fav-btn", data: {turbo_method: :delete } do %>
-                       <i class="fa-solid fa-heart"></i>
-                   <% end %>
+            </div>
+            <div class="card-product-infos">
+              <% if Favourite.where(job: job, user: current_user).empty? %>
+                <%= button_to job_favourites_path(job), class:"fav_button fav-btn" do %>
+                <i class="fa-regular fa-heart"></i>
                 <% end %>
-
-              <%= button_to "More details", job_favourites_path(job) , class:"btn-more-details" %>
-
-              </div>
+              <% else %>
+                <%= link_to favourite_path(Favourite.where(job: job, user: current_user).last), class:"fav-btn", data: {turbo_method: :delete } do %>
+                  <i class="fa-solid fa-heart"></i>
+                <% end %>
+              <% end %>
+            </div>
           </div>
         <% end %>
       <% else %>
-          <% if current_user.employer %>
-        <em>No jobs listed, add one <%= link_to "here", new_job_path %>.</em>
-         <% else %>
-        <em>Sorry, no jobs found.</em>
-      <% end %>
+        <% if current_user.employer %>
+          <em>No jobs listed, add one <%= link_to "here", new_job_path %>.</em>
+        <% else %>
+          <em>Sorry, no jobs found.</em>
+        <% end %>
       <% end %>
     </div>
   </div>
 </div>
+
+<script>  document.querySelectorAll('.clickable-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const jobId = card.querySelector('.card-product-infos a').href.split('/').pop();  // Extract job ID from the link within the card
+    window.location.href = `/jobs/${jobId}`;  // Redirect to job details page
+  });
+});
+</script>
