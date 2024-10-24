@@ -71,9 +71,14 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_22_103739) do
     t.string "company_size"
     t.string "location"
     t.string "job_description"
-    t.decimal "salary"
+    t.string "salary"
     t.bigint "user_id", null: false
     t.string "image_url"
+    t.string "job_nature"
+    t.integer "vacancy"
+    t.string "job_responsibility"
+    t.string "benefits"
+    t.date "application_deadline"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_jobs_on_user_id"
@@ -94,12 +99,16 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_22_103739) do
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "phone_number"
+    t.string "job_experience"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
     t.string "company_name"
-    t.integer "experience"
+    t.string "experience"
     t.string "skills"
     t.string "location"
     t.boolean "employer"

@@ -42,13 +42,13 @@
   margin: 0;
 }
 
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
+// .card-product p {
+//   font-size: 12px;
+//   line-height: 1.4;
+//   opacity: .7;
+//   margin-bottom: 0;
+//   margin-top: 8px;
+// }
 
 .card-product .card-product-infos {
   padding: 16px;
@@ -82,15 +82,30 @@
 
 }
 .card-job-application-right{
-  margin-left: 30px;
+  margin-left: 50px;
   width: 60%;
   border-radius: 5px;
   border: 1px solid #1B4965;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.card-job-application-right .title {
+  border-bottom: 2px solid #EAEAEA;
 }
 .card-job-application .user-info {
   border-radius: 5px;
   border: 1px solid #1B4965;
-  width: 40%;
+  width: 30%;
+  padding: 20px;
+  color: #1B4965;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+.card-job-application .user-info h2 {
+  border-bottom: 2px solid #EAEAEA;
+  font-weight: 500;
 }
 
 .title{
@@ -117,4 +132,71 @@
   border: 1px solid white;
   color: white;
   padding: 10px;
+}
+
+
+// JOB-APP EDIT VIEW CARD STYLING
+
+.job-application-edit-card {
+  margin: 20px;
+  width: 60%;
+  border-radius: 5px;
+  border: 1px solid #1B4965;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 20px;
+  color: #1B4965;
+}
+
+
+// FAVOURITES INDEX CARD STYLING
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  grid-auto-rows: minmax(180px, auto);
+}
+
+.card-favourite {
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items:center;
+  color: #1B4965;
+  height: 160px;
+  text-decoration: none;
+}
+
+.card-favourite-info {
+  flex-grow: 1;
+  p {
+    margin: 0px;
+  }
+}
+
+.card-favourite-img {
+  width: 30%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  clip-path: inset(0 round 9px);
+  padding-right: 8px;
+}
+
+.border-blue {
+  border: 1px solid #5FA8D3;
+}
+
+.favourite-position-absolute {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.favourites-padding {
+  color: #1B4965;
+  padding: 20px 0px;
 }

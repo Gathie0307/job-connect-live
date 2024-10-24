@@ -1,15 +1,38 @@
-<div class="title">
-  <h1>Your favourite jobs are here!</h1>
-</div>
+<div class="container favourites-padding">
 
-<% if @favourites.nil? || @favourites.empty? %>
-  <p>You haven't saved any jobs yet. Start exploring and save jobs you're interested in!</p>
-<% else %>
-  <ul class="favorite-jobs">
-    <% @favourites.each do |favourite| %>
-      <li>
-        <%= link_to favourite.job.job_title, job_path(favourite.job), class: "job-title" %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
+  <h1 class="mb-3">Saved jobs</h1>
+
+  <% if @favourites.nil? || @favourites.empty? %>
+
+    <p>You haven't saved any jobs yet. Start exploring and save jobs you're interested in!</p>
+
+  <% else %>
+
+    <div class="card-grid">
+      <% @favourites.each do |favourite| %>
+        <div style="position:relative;">
+
+          <%= link_to job_path(favourite.job), class:"card-favourite border-blue"  do %>
+
+            <%= cl_image_tag favourite.job.photo.key, class: "card-favourite-img" if favourite.job.photo.attached? %>
+            <div class="card-favourite-info">
+              <h3><%= favourite.job.job_title %></h3>
+              <h4><%= favourite.job.company_name %></h4>
+              <p><%= favourite.job.location %></p>
+              <p> £<%= favourite.job.salary %></p>
+            </div>
+
+          <% end %>
+
+          <div class="favourite-position-absolute">
+            <%= link_to favourite_path(favourite), class:"fav-btn", data: {turbo_method: :delete } do %>
+              <i class="fa-solid fa-heart"></i>
+            <% end %>
+          </div>
+
+        </div>
+      <% end %>
+    </div>
+
+  <% end %>
+</div>
