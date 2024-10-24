@@ -23,7 +23,7 @@
                <h2><%= link_to job.job_title, job_path(job) %> </h2>
                 <h4><%= job.company_name %></h4>
                 <p><%= job.location %></p>
-                <p> £<%= job.salary %></p>
+                <p><%= job.salary %></p>
               </div>
               <div class="card-product-infos">
                <% if Favourite.where(job: job, user: current_user).empty? %>
