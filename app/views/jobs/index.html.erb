@@ -17,7 +17,6 @@
     <div class="cards">
       <% if @jobs.any? %>
         <% @jobs.each do |job| %>
-
           <div class="card-product clickable-card" id="border-width" style="justify-content: space-between">
             <div class="d-flex gap-2">
               <%= cl_image_tag job.photo.key if job.photo.attached? %>
