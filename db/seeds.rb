@@ -143,10 +143,10 @@ puts "Creating applications"
 application2 = JobApplication.create!(status:"confirmed", interview_outcome:"complete", interview_completion:"true", interview_date: "10/11/2024", user: Employee1 , job_id: fourth_job.id)
 application3 = JobApplication.create!(status:"pending", interview_outcome: "in Progress", interview_completion:"false", interview_date: "", user: Employee1, job_id: fourth_job.id)
 application4 = JobApplication.create!(status:"confirmed", interview_outcome: "complete", interview_completion:"true", interview_date: "29/10/2024", user: Employee1, job_id: second_job.id)
-application1 = JobApplication.create!(status:"pending", interview_outcome: "in Progress", interview_completion:"false", interview_date: "30/11/2024", user: Employee1, job_id: third_job.id)
-application2 = JobApplication.create!(status:"confirmed", interview_outcome: "complete", interview_completion:"true", interview_date: "09/11/2024", user: Employee2, job_id: job7.id)
-application3 = JobApplication.create!(status:"pending", interview_outcome: "in Progress", interview_completion:"false", interview_date: "13/12/2024", user: Employee1, job_id: job5.id)
-application4 = JobApplication.create!(status:"confirmed", interview_outcome: "complete", interview_completion:"true", interview_date: "18/11/2024", user: Employee1, job_id: job4.id)
+# application1 = JobApplication.create!(status:"pending", interview_outcome: "in Progress", interview_completion:"false", interview_date: "30/11/2024", user: Employee1, job_id: third_job.id)
+# application2 = JobApplication.create!(status:"confirmed", interview_outcome: "complete", interview_completion:"true", interview_date: "09/11/2024", user: Employee2, job_id: job7.id)
+# application3 = JobApplication.create!(status:"pending", interview_outcome: "in Progress", interview_completion:"false", interview_date: "13/12/2024", user: Employee1, job_id: job5.id)
+# application4 = JobApplication.create!(status:"confirmed", interview_outcome: "complete", interview_completion:"true", interview_date: "18/11/2024", user: Employee1, job_id: job4.id)
 
 
 puts "Seed created! #{User.all.count} users created & #{Job.all.count} jobs created & #{JobApplication.all.count} applications created"
