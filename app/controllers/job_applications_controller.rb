@@ -9,7 +9,7 @@ class JobApplicationsController < ApplicationController
       @pending_applications = apps.select{|app| app.status == 'pending'}
       @confirmed_applications = apps.select{|app| app.status == 'confirmed'}
      # @pending_applications = current_user.job_applications.where(status: "pending")
-     #@confirmed_applications = current_user.job_applications.where(status: "confirmed")
+     # @confirmed_applications = current_user.job_applications.where(status: "confirmed")
 
     else
       @pending_applications = current_user.job_applications.where(status: "pending")
