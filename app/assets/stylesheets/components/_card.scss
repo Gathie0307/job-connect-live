@@ -198,3 +198,33 @@
   color: #1B4965;
   padding: 20px 0px;
 }
+
+
+// JOBS INDEX PAGE CARDS
+
+.card-job-index {
+  border-radius: 10px;
+  border: 1px solid transparent;
+  overflow: hidden;
+  height: 165px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+}
+
+
+.card-job-index img {
+  height: 100%;
+  width: 200px;
+  object-fit: cover;
+}
+
+.card-job-index h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-job-index .card-product-infos {
+  padding: 16px;
+}
