@@ -1,42 +1,46 @@
-<h1>Edit Job Application</h1>
+<div class="container d-flex" style="margin-bottom: 100px;">
+  <div class="job-application-edit-card">
+    <h1 style="text-align:center;">Applicant details</h1>
+    <h4>Name:</h4>
+    <p class="card-text"><%= @job_application.user.first_name %> <%= @job_application.user.last_name %></p>
+    <h4>Skills:</h4>
+    <p class="card-text"><%= @job_application.user.skills %></p>
+    <h4>Education:</h4>
+    <p class="card-text"><%= @job_application.user.education %></p>
 
-  <%= @job_application.job.job_title %>
-  <%= @job_application.user.username %>
-  <%= @job_application.user.skills %>
-  <%= @job_application.user.education %>
-  <%= @job_application.status %>
-<% if @job_application.status == 'pending' %>
 
-<%= form_with model: @job_application do |f| %>
-  <div class="field">
-    <%= f.label :status %>
-    <%= f.select :status, ["pending", "confirmed", "rejected"] %>
-  </div>
-<% end %>
-<%= form_with model: @job_application do |f| %>
-  <div class="field">
-    <%= f.label :status %>
-    <%= f.select :status, ["pending", "confirmed", "rejected"] %>
-  </div>
-
-  <div class="field">
-    <%= f.label :interview_outcome %>
-    <%= f.text_field :interview_outcome %>
-  </div>
-
-  <div class="field">
-    <%= f.label :interview_date %>
-    <%= f.date_field :interview_date %>
-  </div>
-
-  <div class="field">
-    <%= f.label :interview_completion %>
-    <%= f.check_box :interview_completion %>
+    <%= simple_form_for(@job_application) do |f| %>
+      <% if @job_application.status == 'pending' %>
+        <%= f.input :status, as: :select, collection: ["pending", "rejected", "confirmed"] %>
+      <% end %>
+      <% if @job_application.status == 'confirmed' %>
+        <%= f.input :interview_date, html5: true%>
+        <%= f.label :inteview_completion %>
+        <%= f.input :interview_completion, label: "check if applicant completed interview" %>
+      <% end %>
+      <% if @job_application.interview_date < Date.today %>
+      <div>
+        <%= f.label :interview_outcome, style: "display:block;" %>
+        <%= f.text_area :interview_outcome, placeholder: "place offer or rejection letter here...", style: "width:100%; border-color: #1B4965"%>
+      </div>
+      <% end %>
+        <%= f.submit "update application", class: "btn-more-details", style: "font-size: 16px;width:100%;"%>
+    <% end %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Update Application" %>
+  <div class="job-application-edit-card">
+    <h3><%= @job_application.job.job_title %></h3>
+     <h4>Company  name:</h4>
+      <p class="card-text"><%= @job_application.job.company_name %></p>
+      <h4>Company description: </h4>
+      <p class="card-text"><%= @job_application.job.company_description %></p>
+      <h4>Company size</h4>
+      <p class="card-text"><%= @job_application.job.company_size %></p>
+      <h4>Location: </h4>
+      <p class="card-text"><%= @job_application.job.location %></p>
+      <h4>Job Description: </h4>
+      <p class="card-text"><%= @job_application.job.job_description %></p>
+      <h4>Salary: </h4>
+      <p class="card-text"><%= @job_application.job.salary %></p>
   </div>
-<% end %>
-
-<% end %>
+</div>
