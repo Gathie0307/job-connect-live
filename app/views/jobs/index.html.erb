@@ -1,7 +1,7 @@
 <div class="container" style="margin-bottom:100px;">
   <div class="row justify-content-center">
     <div class="col-sm-8 my-3">
-      <h1>Search all jobs</h1>
+      <h1 style="color: #1B4965; margin-bottom: 20px;">Search all jobs</h1>
         <%= form_with url: jobs_path, method: :get, class: "simple_form search" do %>
         <div class="search-form-control form-group">
           <%= text_field_tag :query,
